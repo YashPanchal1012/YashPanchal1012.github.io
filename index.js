@@ -56,15 +56,12 @@ function Navbar({ onNavigate, dark, setDark }) {
               </a>
             </li>
             <li className="nav-item">
-              <button
+              <i
+                className={
+                  dark ? "bi bi-brightness-high" : "bi bi-brightness-high-fill"
+                }
                 onClick={() => setDark((d) => !d)}
-              >
-                {dark ? (
-                  <i className="bi bi-brightness-high"></i>
-                ) : (
-                  <i className="bi bi-brightness-high-fill"></i>
-                )}
-              </button>
+              ></i>
             </li>
           </ul>
         </div>
@@ -105,7 +102,7 @@ function Home() {
 
 function ExperiencePage() {
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 justify-content-center">
       <h2>Experience</h2>
       <p>Add your work experience here.</p>
     </div>
@@ -114,7 +111,7 @@ function ExperiencePage() {
 
 function ProjectsPage() {
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 justify-content-center">
       <h2>Projects</h2>
       <p>Add your projects here.</p>
     </div>
