@@ -1,7 +1,7 @@
 function Navbar({ onNavigate, dark, setDark }) {
   return (
     <nav
-      className={`navbar navbar-expand-lg nav-underline${
+      className={`navbar navbar-expand-lg nav-underline ${
         dark ? "navbar-dark bg-dark" : "navbar-light bg-light"
       }`}
     >
@@ -57,7 +57,6 @@ function Navbar({ onNavigate, dark, setDark }) {
             </li>
             <li className="nav-item">
               <button
-                className="btn btn-outline-secondary ms-2"
                 onClick={() => setDark((d) => !d)}
               >
                 {dark ? (
