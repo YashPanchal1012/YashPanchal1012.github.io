@@ -35,11 +35,25 @@ function Navbar() {
     );
 }
 
+
 function App() {
     return (
         <>
             <Navbar />
             <div className="container mt-5">
+                <div className="row align-items-center mb-5">
+                    <div className="col-md-4 text-center mb-4 mb-md-0">
+                        <img src="images/Profile Picture.jpg" alt="Yash Panchal" className="img-fluid rounded-circle shadow" style={{maxWidth: '220px'}} />
+                    </div>
+                    <div className="col-md-8">
+                        <h2 className="fw-bold">About Me</h2>
+                        <h5 className="text-secondary mb-1">University of Example</h5>
+                        <h6 className="text-muted mb-3">B.S. in Computer Science</h6>
+                        <p>
+                            I am a passionate computer science student with a strong interest in software engineering, web development, and data science. I enjoy building impactful projects, learning new technologies, and collaborating with others to solve real-world problems. I am always eager to take on new challenges and grow as a developer.
+                        </p>
+                    </div>
+                </div>
                 <section id="experience">
                     <h2>Experience</h2>
                     <p>Add your work experience here.</p>
