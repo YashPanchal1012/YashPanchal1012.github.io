@@ -57,9 +57,12 @@ function Navbar({ onNavigate, dark, setDark }) {
             </li>
             <li className="nav-item">
               <i
-                className={
-                  dark ? "bi bi-brightness-high" : "bi bi-brightness-high-fill"
-                }
+                className={`icon-link icon-link-hover 
+                  ${
+                    dark
+                      ? "bi bi-brightness-high"
+                      : "bi bi-brightness-high-fill"
+                  }`}
                 onClick={() => setDark((d) => !d)}
               ></i>
             </li>
@@ -103,8 +106,58 @@ function Home() {
 function ExperiencePage() {
   return (
     <div className="container mt-5 justify-content-center">
-      <h2>Experience</h2>
-      <p>Add your work experience here.</p>
+      <h2 className="mb-4">Experience</h2>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          ECE DEPARTMENT, UMN{" "}
+          <span className="text-muted">| Depot Assistant</span>
+        </h5>
+        <div className="text-secondary mb-1">
+          Jan 2024 - Present | Minneapolis, MN
+        </div>
+        <ul>
+          <li>Maintained lab equipment for multiple ECE courses.</li>
+          <li>
+            Assembled 300+ lab kits and performed basic soldering and repairs.
+          </li>
+          <li>Advised students on part selection and inventory options.</li>
+        </ul>
+      </div>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          CS&amp;E DEPARTMENT, UMN{" "}
+          <span className="text-muted">| Undergraduate Teaching Assistant</span>
+        </h5>
+        <div className="text-secondary mb-1">
+          Sep 2024 - Dec 2024 | Minneapolis, MN
+        </div>
+        <ul>
+          <li>
+            Led weekly labs for 20+ students and hosted exam prep sessions.
+          </li>
+          <li>
+            Held office hours and graded assignments with detailed feedback.
+          </li>
+        </ul>
+      </div>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          HOUSING &amp; RESIDENTIAL LIFE, UMN{" "}
+          <span className="text-muted">| Hospitality Specialist</span>
+        </h5>
+        <div className="text-secondary mb-1">
+          May 2024 - Aug 2024 | Minneapolis, MN
+        </div>
+        <ul>
+          <li>
+            Supported residents, enforced policies, and ensured hall safety.
+          </li>
+          <li>
+            Conducted rounds, collaborated with staff, and used IRIS for admin
+            tasks.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
@@ -112,8 +165,90 @@ function ExperiencePage() {
 function ProjectsPage() {
   return (
     <div className="container mt-5 justify-content-center">
-      <h2>Projects</h2>
-      <p>Add your projects here.</p>
+      <h2 className="mb-4">Projects</h2>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          RECIPE HUB{" "}
+          <span className="text-muted">| Django, React, Bootstrap, SQLite</span>
+        </h5>
+        <div className="text-secondary mb-1">
+          Jun 2025 - Present | Minneapolis, MN
+        </div>
+        <ul>
+          <li>
+            Developed a full-stack recipe web app that lets users search and
+            filter recipes based on ingredients they have on hand.
+          </li>
+          <li>
+            Integrated TheMealDB and Spoonacular APIs to fetch diverse recipe
+            data, then cleaned and stored it in a local SQLite database using
+            Python scripts.
+          </li>
+          <li>
+            Built a responsive front end with React and Bootstrap, and
+            implemented a Django backend to manage data access and filtering
+            logic.
+          </li>
+        </ul>
+      </div>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          CONCORDANCER <span className="text-muted">| C</span>
+        </h5>
+        <div className="text-secondary mb-1">Feb 2025 | Minneapolis, MN</div>
+        <ul>
+          <li>
+            Built a Concordancer using a hash table and linked list chaining.
+          </li>
+          <li>Added CLI support for adding, searching, and managing words.</li>
+          <li>Enabled dictionary-based spell check with file I/O support.</li>
+        </ul>
+      </div>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          HUFFMAN ENCODER AND DECODER <span className="text-muted">| Java</span>
+        </h5>
+        <div className="text-secondary mb-1">
+          Feb – Mar 2024 | Minneapolis, MN
+        </div>
+        <ul>
+          <li>Developed a file compressor using Huffman Coding Trees.</li>
+          <li>Designed an OOP solution with 4 classes and 20+ methods.</li>
+        </ul>
+      </div>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          Othello, CSCI 1913 - Intro to Algorithms &amp; Data Structures
+        </h5>
+        <div className="text-secondary mb-1">Jan 2024 - Feb 2024</div>
+        <ul>
+          <li>
+            Developed an Othello game with an AI opponent, playable in the
+            terminal using Unicode characters.
+          </li>
+          <li>
+            Implemented a random move player and an AI player utilizing
+            strategic board evaluation for optimized decision-making.
+          </li>
+        </ul>
+      </div>
+      <div className="mb-4">
+        <h5 className="fw-bold mb-1">
+          BELL-LESS DOORBELL SYSTEM{" "}
+          <span className="text-muted">| C++, HTML, CSS, IFTTT</span>
+        </h5>
+        <div className="text-secondary mb-1">
+          Nov – Dec 2023 | Minneapolis, MN
+        </div>
+        <ul>
+          <li>Built an IoT doorbell system using Photon and IFTTT.</li>
+          <li>Designed HTML interface and circuit schematics in Fritzing.</li>
+          <li>
+            Programmed micro controller in C++ and helped with hardware
+            assembly.
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }
