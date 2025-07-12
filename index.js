@@ -11,27 +11,18 @@ function Navbar({ onNavigate, dark, setDark }) {
             <li className="nav-item">
               <a
                 className="nav-link fw-bold fs-5"
-                href="#"
                 onClick={() => onNavigate("home")}
               >
                 Yash Panchal
               </a>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#"
-                onClick={() => onNavigate("experience")}
-              >
-                Experience
+              <a className="nav-link" onClick={() => onNavigate("Work")}>
+                Work
               </a>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="#"
-                onClick={() => onNavigate("projects")}
-              >
+              <a className="nav-link" onClick={() => onNavigate("projects")}>
                 Projects
               </a>
             </li>
@@ -56,15 +47,17 @@ function Navbar({ onNavigate, dark, setDark }) {
               </a>
             </li>
             <li className="nav-item">
-              <i
-                className={`icon-link icon-link-hover 
+              <a className="icon-link icon-link-hover">
+                <i
+                  className={`
                   ${
                     dark
                       ? "bi bi-brightness-high"
                       : "bi bi-brightness-high-fill"
                   }`}
-                onClick={() => setDark((d) => !d)}
-              ></i>
+                  onClick={() => setDark((d) => !d)}
+                ></i>
+              </a>
             </li>
           </ul>
         </div>
@@ -103,14 +96,14 @@ function Home() {
   );
 }
 
-function ExperiencePage() {
+function WorkPage() {
   return (
     <div className="container mt-5 justify-content-center">
-      <h2 className="mb-4">Experience</h2>
+      <h2 className="mb-4">Work</h2>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           ECE DEPARTMENT, UMN{" "}
-          <span className="text-muted">| Depot Assistant</span>
+          <span className="text-secondary-emphasis">| Depot Assistant</span>
         </h5>
         <div className="text-secondary mb-1">
           Jan 2024 - Present | Minneapolis, MN
@@ -126,7 +119,7 @@ function ExperiencePage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           CS&amp;E DEPARTMENT, UMN{" "}
-          <span className="text-muted">| Undergraduate Teaching Assistant</span>
+          <span className="text-secondary-emphasis">| Undergraduate Teaching Assistant</span>
         </h5>
         <div className="text-secondary mb-1">
           Sep 2024 - Dec 2024 | Minneapolis, MN
@@ -143,7 +136,7 @@ function ExperiencePage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           HOUSING &amp; RESIDENTIAL LIFE, UMN{" "}
-          <span className="text-muted">| Hospitality Specialist</span>
+          <span className="text-secondary-emphasis">| Hospitality Specialist</span>
         </h5>
         <div className="text-secondary mb-1">
           May 2024 - Aug 2024 | Minneapolis, MN
@@ -169,7 +162,7 @@ function ProjectsPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           RECIPE HUB{" "}
-          <span className="text-muted">| Django, React, Bootstrap, SQLite</span>
+          <span className="text-secondary-emphasis">| Django, React, Bootstrap, SQLite</span>
         </h5>
         <div className="text-secondary mb-1">
           Jun 2025 - Present | Minneapolis, MN
@@ -193,7 +186,7 @@ function ProjectsPage() {
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          CONCORDANCER <span className="text-muted">| C</span>
+          CONCORDANCER <span className="text-secondary-emphasis">| C</span>
         </h5>
         <div className="text-secondary mb-1">Feb 2025 | Minneapolis, MN</div>
         <ul>
@@ -206,7 +199,7 @@ function ProjectsPage() {
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          HUFFMAN ENCODER AND DECODER <span className="text-muted">| Java</span>
+          HUFFMAN ENCODER AND DECODER <span className="text-secondary-emphasis">| Java</span>
         </h5>
         <div className="text-secondary mb-1">
           Feb – Mar 2024 | Minneapolis, MN
@@ -218,7 +211,7 @@ function ProjectsPage() {
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          Othello, CSCI 1913 - Intro to Algorithms &amp; Data Structures
+          Othello <span className="text-secondary-emphasis">| Python </span>
         </h5>
         <div className="text-secondary mb-1">Jan 2024 - Feb 2024</div>
         <ul>
@@ -235,7 +228,7 @@ function ProjectsPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           BELL-LESS DOORBELL SYSTEM{" "}
-          <span className="text-muted">| C++, HTML, CSS, IFTTT</span>
+          <span className="text-secondary-emphasis">| C++, HTML, CSS, IFTTT</span>
         </h5>
         <div className="text-secondary mb-1">
           Nov – Dec 2023 | Minneapolis, MN
@@ -263,7 +256,7 @@ function App() {
   }, [dark]);
   let content;
   if (page === "home") content = <Home />;
-  else if (page === "experience") content = <ExperiencePage />;
+  else if (page === "Work") content = <WorkPage />;
   else if (page === "projects") content = <ProjectsPage />;
   return (
     <>
