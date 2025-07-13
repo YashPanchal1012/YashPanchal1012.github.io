@@ -157,7 +157,7 @@ function ProjectsPage() {
         <h5 className="fw-bold mb-1">
           <a href="https://github.com/YashPanchal1012/recipe_hub">
             {" "}
-            RECIPE HUB{" "}
+            RECIPE HUB
           </a>{" "}
           <span className="text-secondary">
             | Django, React, Bootstrap, SQLite
@@ -174,14 +174,14 @@ function ProjectsPage() {
           <li>
             Integrated{" "}
             <a
-              className="link-body-emphasis"
+              className="text-decoration-none"
               href="https://www.themealdb.com/api.php"
             >
               TheMealDB
             </a>{" "}
             and
             <a
-              className="link-body-emphasis"
+              className="text-decoration-none"
               href="https://spoonacular.com/food-api"
             >
               {" "}
