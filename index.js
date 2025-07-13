@@ -40,7 +40,7 @@ function Navbar({ onNavigate, dark, setDark }) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link">
+              <a className="nav-link" onClick={() => setDark((d) => !d)}>
                 <i
                   className={`
                   ${
@@ -48,7 +48,6 @@ function Navbar({ onNavigate, dark, setDark }) {
                       ? "bi bi-brightness-high"
                       : "bi bi-brightness-high-fill"
                   }`}
-                  onClick={() => setDark((d) => !d)}
                 ></i>
               </a>
             </li>
@@ -131,9 +130,7 @@ function WorkPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           HOUSING &amp; RESIDENTIAL LIFE, UMN{" "}
-          <span className="text-secondary">
-            | Hospitality Specialist
-          </span>
+          <span className="text-secondary">| Hospitality Specialist</span>
         </h5>
         <div className="text-secondary mb-1">
           May 2024 - Aug 2024 | Minneapolis, MN
@@ -158,7 +155,10 @@ function ProjectsPage() {
       <h2 className="mb-4">Projects</h2>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          RECIPE HUB{" "}
+          <a href="https://github.com/YashPanchal1012/recipe_hub">
+            {" "}
+            RECIPE HUB{" "}
+          </a>{" "}
           <span className="text-secondary">
             | Django, React, Bootstrap, SQLite
           </span>
@@ -172,9 +172,23 @@ function ProjectsPage() {
             filter recipes based on ingredients they have on hand.
           </li>
           <li>
-            Integrated TheMealDB and Spoonacular APIs to fetch diverse recipe
-            data, then cleaned and stored it in a local SQLite database using
-            Python scripts.
+            Integrated{" "}
+            <a
+              className="link-body-emphasis"
+              href="https://www.themealdb.com/api.php"
+            >
+              TheMealDB
+            </a>{" "}
+            and
+            <a
+              className="link-body-emphasis"
+              href="https://spoonacular.com/food-api"
+            >
+              {" "}
+              Spoonacular{" "}
+            </a>{" "}
+            APIs to fetch diverse recipe data, then cleaned and stored it in a
+            local SQLite database using Python scripts.
           </li>
           <li>
             Built a responsive front end with React and Bootstrap, and
@@ -228,9 +242,7 @@ function ProjectsPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           BELL-LESS DOORBELL SYSTEM{" "}
-          <span className="text-secondary">
-            | C++, HTML, CSS, IFTTT
-          </span>
+          <span className="text-secondary">| C++, HTML, CSS, IFTTT</span>
         </h5>
         <div className="text-secondary mb-1">
           Nov – Dec 2023 | Minneapolis, MN
