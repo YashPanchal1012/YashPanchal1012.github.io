@@ -27,12 +27,7 @@ function Navbar({ onNavigate, dark, setDark }) {
               </a>
             </li>
             <li className="nav-item">
-              <a
-                className="nav-link"
-                href="https://github.com/YashPanchal1012"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a className="nav-link" href="https://github.com/YashPanchal1012">
                 GitHub
               </a>
             </li>
@@ -40,14 +35,12 @@ function Navbar({ onNavigate, dark, setDark }) {
               <a
                 className="nav-link"
                 href="https://www.linkedin.com/in/yashwardhan-panchal-2829b8282/"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
             </li>
             <li className="nav-item">
-              <a className="icon-link icon-link-hover">
+              <a className="nav-link icon-link-hover">
                 <i
                   className={`
                   ${
@@ -98,12 +91,12 @@ function Home() {
 
 function WorkPage() {
   return (
-    <div className="container mt-5 justify-content-center">
+    <div className="container mt-5 align-items-center">
       <h2 className="mb-4">Work</h2>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           ECE DEPARTMENT, UMN{" "}
-          <span className="text-secondary-emphasis">| Depot Assistant</span>
+          <span className="text-secondary">| Depot Assistant</span>
         </h5>
         <div className="text-secondary mb-1">
           Jan 2024 - Present | Minneapolis, MN
@@ -119,7 +112,9 @@ function WorkPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           CS&amp;E DEPARTMENT, UMN{" "}
-          <span className="text-secondary-emphasis">| Undergraduate Teaching Assistant</span>
+          <span className="text-secondary">
+            | Undergraduate Teaching Assistant
+          </span>
         </h5>
         <div className="text-secondary mb-1">
           Sep 2024 - Dec 2024 | Minneapolis, MN
@@ -136,7 +131,9 @@ function WorkPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           HOUSING &amp; RESIDENTIAL LIFE, UMN{" "}
-          <span className="text-secondary-emphasis">| Hospitality Specialist</span>
+          <span className="text-secondary">
+            | Hospitality Specialist
+          </span>
         </h5>
         <div className="text-secondary mb-1">
           May 2024 - Aug 2024 | Minneapolis, MN
@@ -157,12 +154,14 @@ function WorkPage() {
 
 function ProjectsPage() {
   return (
-    <div className="container mt-5 justify-content-center">
+    <div className="container mt-5 align-items-center">
       <h2 className="mb-4">Projects</h2>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           RECIPE HUB{" "}
-          <span className="text-secondary-emphasis">| Django, React, Bootstrap, SQLite</span>
+          <span className="text-secondary">
+            | Django, React, Bootstrap, SQLite
+          </span>
         </h5>
         <div className="text-secondary mb-1">
           Jun 2025 - Present | Minneapolis, MN
@@ -186,7 +185,7 @@ function ProjectsPage() {
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          CONCORDANCER <span className="text-secondary-emphasis">| C</span>
+          CONCORDANCER <span className="text-secondary">| C</span>
         </h5>
         <div className="text-secondary mb-1">Feb 2025 | Minneapolis, MN</div>
         <ul>
@@ -199,7 +198,8 @@ function ProjectsPage() {
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          HUFFMAN ENCODER AND DECODER <span className="text-secondary-emphasis">| Java</span>
+          HUFFMAN ENCODER AND DECODER{" "}
+          <span className="text-secondary">| Java</span>
         </h5>
         <div className="text-secondary mb-1">
           Feb – Mar 2024 | Minneapolis, MN
@@ -211,7 +211,7 @@ function ProjectsPage() {
       </div>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          Othello <span className="text-secondary-emphasis">| Python </span>
+          Othello <span className="text-secondary">| Python </span>
         </h5>
         <div className="text-secondary mb-1">Jan 2024 - Feb 2024</div>
         <ul>
@@ -228,7 +228,9 @@ function ProjectsPage() {
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
           BELL-LESS DOORBELL SYSTEM{" "}
-          <span className="text-secondary-emphasis">| C++, HTML, CSS, IFTTT</span>
+          <span className="text-secondary">
+            | C++, HTML, CSS, IFTTT
+          </span>
         </h5>
         <div className="text-secondary mb-1">
           Nov – Dec 2023 | Minneapolis, MN
@@ -248,7 +250,7 @@ function ProjectsPage() {
 
 function App() {
   const [page, setPage] = React.useState("home");
-  const [dark, setDark] = React.useState(false);
+  const [dark, setDark] = React.useState(true);
   React.useEffect(() => {
     document.body.className = dark
       ? "bg-dark text-light"
