@@ -40,7 +40,7 @@ function Navbar({ onNavigate, dark, setDark }) {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link icon-link-hover">
+              <a className="nav-link">
                 <i
                   className={`
                   ${
