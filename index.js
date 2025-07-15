@@ -155,7 +155,10 @@ function ProjectsPage() {
       <h2 className="mb-4">Projects</h2>
       <div className="mb-4">
         <h5 className="fw-bold mb-1">
-          <a href="https://github.com/YashPanchal1012/recipe_hub">
+          <a
+            href="https://github.com/YashPanchal1012/recipe_hub"
+            className="text-decoration-none text-primary-subtle"
+          >
             {" "}
             RECIPE HUB
           </a>{" "}
@@ -174,18 +177,17 @@ function ProjectsPage() {
           <li>
             Integrated{" "}
             <a
-              className="text-decoration-none"
+              className="text-decoration-none text-warning"
               href="https://www.themealdb.com/api.php"
             >
               TheMealDB
             </a>{" "}
             and
             <a
-              className="text-decoration-none"
+              className="text-decoration-none text-warning"
               href="https://spoonacular.com/food-api"
             >
-              {" "}
-              Spoonacular{" "}
+              Spoonacular
             </a>{" "}
             APIs to fetch diverse recipe data, then cleaned and stored it in a
             local SQLite database using Python scripts.
