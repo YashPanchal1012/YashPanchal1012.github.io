@@ -77,7 +77,7 @@ function Home() {
           </h5>
           <p>
             I am a passionate computer science student with a strong interest in
-            software engineering, web development, and data science. I enjoy
+            software engineering and web development. I enjoy
             building impactful projects, learning new technologies, and
             collaborating with others to solve real-world problems. I am always
             eager to take on new challenges and grow as a developer.
