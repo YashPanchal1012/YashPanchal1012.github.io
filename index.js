@@ -64,7 +64,7 @@ function Home() {
       <div className="row align-items-center mb-5">
         <div className="col-md-4 text-center mb-4 mb-md-0">
           <img
-            src="images/Profile Picture.jpg"
+            src="images/Headshot1.jpg"
             alt="Yash Panchal"
             className="img-fluid rounded-circle shadow"
             style={{ maxWidth: "220px" }}
