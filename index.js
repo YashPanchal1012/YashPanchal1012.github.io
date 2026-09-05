@@ -1,3 +1,32 @@
+const recipeHubPreviewSvg = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+    <defs>
+      <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#0f172a" />
+        <stop offset="100%" stop-color="#1d4ed8" />
+      </linearGradient>
+      <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="100%" stop-color="#dbeafe" />
+      </linearGradient>
+    </defs>
+    <rect width="1200" height="700" rx="32" fill="url(#bg)" />
+    <rect x="95" y="95" width="1010" height="510" rx="28" fill="url(#panel)" opacity="0.98" />
+    <rect x="135" y="135" width="330" height="92" rx="18" fill="#ffffff" />
+    <rect x="135" y="250" width="330" height="310" rx="22" fill="#e2e8f0" />
+    <rect x="490" y="135" width="560" height="130" rx="20" fill="#ffffff" />
+    <rect x="490" y="290" width="560" height="270" rx="20" fill="#ffffff" />
+    <circle cx="255" cy="355" r="70" fill="#fb7185" />
+    <circle cx="255" cy="355" r="38" fill="#fef3c7" />
+    <rect x="545" y="185" width="230" height="20" rx="10" fill="#60a5fa" />
+    <rect x="545" y="330" width="440" height="22" rx="11" fill="#cbd5e1" />
+    <rect x="545" y="372" width="380" height="22" rx="11" fill="#cbd5e1" />
+    <rect x="545" y="414" width="420" height="22" rx="11" fill="#cbd5e1" />
+    <rect x="545" y="456" width="340" height="22" rx="11" fill="#cbd5e1" />
+    <text x="600" y="650" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">Recipe Hub</text>
+  </svg>
+`)}`;
+
 const portfolioProjects = [
   {
     id: "gesture-controlled-xts",
@@ -47,7 +76,7 @@ const portfolioProjects = [
       "Simulated physics-enabled URDF models in Gazebo and tuned motion profiles for stable trajectory execution.",
       "Connected human movement data to robotic control logic for responsive, real-time motion translation.",
     ],
-    link: "#",
+    link: "https://github.com/YashPanchal1012/csci-4551-final-project",
     media: [
       {
         type: "video",
@@ -112,6 +141,7 @@ const portfolioProjects = [
       },
     ],
     preview: "Videos/recipe-hub-demo.mp4",
+    thumbnail: recipeHubPreviewSvg,
     mediaType: "video",
   },
   {
@@ -270,19 +300,19 @@ function Home() {
           <div className="row g-3">
             <div className="col-sm-4">
               <div className="stat-card">
-                <div className="stat-number">4+</div>
+                <div className="stat-number">4</div>
                 <div className="stat-label">Years of study</div>
               </div>
             </div>
             <div className="col-sm-4">
               <div className="stat-card">
-                <div className="stat-number">10+</div>
+                <div className="stat-number">5</div>
                 <div className="stat-label">Technical projects</div>
               </div>
             </div>
             <div className="col-sm-4">
               <div className="stat-card">
-                <div className="stat-number">4+</div>
+                <div className="stat-number">4</div>
                 <div className="stat-label">Work roles</div>
               </div>
             </div>
@@ -515,15 +545,20 @@ function ProjectsPage() {
             <div className="project-card h-100">
               <div className="project-image">
                 {project.mediaType === "video" ? (
-                  <div className="project-video-preview">
-                    <img
-                      src={project.thumbnail || project.preview}
-                      alt={project.title}
-                      className="w-100 h-100"
-                      style={{ objectFit: "cover" }}
-                    />
-                    <span className="project-play-badge">Play video</span>
-                  </div>
+                  <video
+                    key={project.preview}
+                    className="w-100 h-100"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    poster={project.thumbnail || project.preview}
+                    style={{ objectFit: "cover" }}
+                  >
+                    <source src={project.preview} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 ) : (
                   <img
                     src={project.thumbnail || project.preview}
@@ -583,17 +618,19 @@ function ProjectsPage() {
           >
             <button
               type="button"
-              className="btn-close position-absolute top-0 end-0 m-3"
+              className="btn-close btn-close-white project-modal-close"
               aria-label="Close"
               onClick={() => setSelectedProject(null)}
             ></button>
 
-            <div className="project-modal-media">
-              {renderMedia(activeMedia, {
-                key: activeMedia?.src,
-                className: "w-100 h-100",
-                style: { objectFit: "cover" },
-              })}
+            <div className="project-modal-media-shell">
+              <div className="project-modal-media">
+                {renderMedia(activeMedia, {
+                  key: activeMedia?.src,
+                  className: "w-100 h-100",
+                  style: { objectFit: "cover" },
+                })}
+              </div>
             </div>
 
             {projectMedia.length > 1 ? (
@@ -633,9 +670,6 @@ function ProjectsPage() {
             <div className="p-4">
               <div className="d-flex justify-content-between align-items-center gap-3 mb-3">
                 <h3 className="fw-bold mb-0">{selectedProject.title}</h3>
-                <span className="project-tag">
-                  {selectedProject.categoryLabel}
-                </span>
               </div>
 
               <div className="project-tech mb-3">{selectedProject.tech}</div>
@@ -657,6 +691,12 @@ function ProjectsPage() {
                   View project
                 </a>
               ) : null}
+
+              <div className="project-modal-footer">
+                <span className="project-tag project-modal-tag">
+                  {selectedProject.categoryLabel}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -738,13 +778,13 @@ function App() {
           }
 
           .experience-company {
-            color: #0f172a;
+            color: #ffffff;
             font-size: 1.35rem;
             line-height: 1.2;
           }
 
           .experience-role {
-            color: #2563eb;
+            color: #d1d5db;
             font-size: 1.05rem;
             font-weight: 700;
           }
@@ -955,6 +995,16 @@ function App() {
             background: rgba(37, 99, 235, 0.9);
           }
 
+          .project-modal-tag {
+            background: rgba(37, 99, 235, 0.92);
+          }
+
+          .project-modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 1.5rem;
+          }
+
           .dark .project-card,
           .dark .project-modal {
             color: #e5e7eb;
@@ -1010,12 +1060,20 @@ function App() {
             background: rgba(59, 130, 246, 0.9);
           }
 
+          .dark .project-modal-close {
+            background: rgba(2, 6, 23, 0.9);
+          }
+
+          .dark .project-modal-tag {
+            background: rgba(59, 130, 246, 0.92);
+          }
+
           .dark .experience-company {
-            color: #f8fafc;
+            color: #ffffff;
           }
 
           .dark .experience-role {
-            color: #93c5fd;
+            color: #d1d5db;
           }
 
           .dark .experience-location {
@@ -1047,6 +1105,21 @@ function App() {
           .project-modal-media {
             height: 310px;
             background: #0f172a;
+          }
+
+          .project-modal-media-shell {
+            position: relative;
+            overflow: hidden;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            margin: 1rem 1rem 0;
+          }
+
+          .project-modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            z-index: 2;
           }
 
           .project-modal-media img,
