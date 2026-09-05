@@ -105,9 +105,14 @@ const portfolioProjects = [
       "Stored curated recipe data in SQLite for fast local retrieval and inventory-based filtering.",
     ],
     link: "https://github.com/YashPanchal1012/recipe_hub",
-    preview:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
-    mediaType: "image",
+    media: [
+      {
+        type: "video",
+        src: "Videos/recipe-hub-demo.mp4",
+      },
+    ],
+    preview: "Videos/recipe-hub-demo.mp4",
+    mediaType: "video",
   },
   {
     id: "doorbell",
