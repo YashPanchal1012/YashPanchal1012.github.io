@@ -261,7 +261,7 @@ function Home() {
             </div>
             <div className="col-sm-4">
               <div className="stat-card">
-                <div className="stat-number">5</div>
+                <div className="stat-number">4</div>
                 <div className="stat-label">Technical projects</div>
               </div>
             </div>
