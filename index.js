@@ -1,32 +1,3 @@
-const recipeHubPreviewSvg = `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(`
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
-    <defs>
-      <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-        <stop offset="0%" stop-color="#0f172a" />
-        <stop offset="100%" stop-color="#1d4ed8" />
-      </linearGradient>
-      <linearGradient id="panel" x1="0" x2="1" y1="0" y2="1">
-        <stop offset="0%" stop-color="#ffffff" />
-        <stop offset="100%" stop-color="#dbeafe" />
-      </linearGradient>
-    </defs>
-    <rect width="1200" height="700" rx="32" fill="url(#bg)" />
-    <rect x="95" y="95" width="1010" height="510" rx="28" fill="url(#panel)" opacity="0.98" />
-    <rect x="135" y="135" width="330" height="92" rx="18" fill="#ffffff" />
-    <rect x="135" y="250" width="330" height="310" rx="22" fill="#e2e8f0" />
-    <rect x="490" y="135" width="560" height="130" rx="20" fill="#ffffff" />
-    <rect x="490" y="290" width="560" height="270" rx="20" fill="#ffffff" />
-    <circle cx="255" cy="355" r="70" fill="#fb7185" />
-    <circle cx="255" cy="355" r="38" fill="#fef3c7" />
-    <rect x="545" y="185" width="230" height="20" rx="10" fill="#60a5fa" />
-    <rect x="545" y="330" width="440" height="22" rx="11" fill="#cbd5e1" />
-    <rect x="545" y="372" width="380" height="22" rx="11" fill="#cbd5e1" />
-    <rect x="545" y="414" width="420" height="22" rx="11" fill="#cbd5e1" />
-    <rect x="545" y="456" width="340" height="22" rx="11" fill="#cbd5e1" />
-    <text x="600" y="650" text-anchor="middle" fill="#e2e8f0" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="700">Recipe Hub</text>
-  </svg>
-`)}`;
-
 const portfolioProjects = [
   {
     id: "gesture-controlled-xts",
@@ -143,23 +114,6 @@ const portfolioProjects = [
     preview: "Videos/recipe-hub-demo.mp4",
     thumbnail: recipeHubPreviewSvg,
     mediaType: "video",
-  },
-  {
-    id: "doorbell",
-    title: "Bell-less Doorbell System",
-    category: "iot",
-    categoryLabel: "IoT",
-    tech: "C++, HTML, CSS, IFTTT",
-    summary: "Built an IoT doorbell system using Photon and IFTTT.",
-    highlights: [
-      "Designed the HTML interface and circuit schematics in Fritzing.",
-      "Programmed the microcontroller in C++ and helped with hardware assembly.",
-      "Connected the system to notification workflows to create a practical smart doorbell experience.",
-    ],
-    link: "#",
-    preview:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-    mediaType: "image",
   },
 ];
 
@@ -436,10 +390,8 @@ function ProjectsPage() {
   const filters = [
     { label: "All", value: "all" },
     { label: "Web", value: "web" },
-    { label: "Systems", value: "systems" },
     { label: "Robotics", value: "robotics" },
     { label: "Machine Learning", value: "ml" },
-    { label: "IoT", value: "iot" },
   ];
 
   const visibleProjects =
