@@ -112,7 +112,8 @@ const portfolioProjects = [
       },
     ],
     preview: "Videos/recipe-hub-demo.mp4",
-    thumbnail: recipeHubPreviewSvg,
+    thumbnail:
+      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
     mediaType: "video",
   },
 ];
