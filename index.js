@@ -1,5 +1,23 @@
 const portfolioProjects = [
   {
+    id: "semantic-image-search",
+    title: "Semantic Image Search",
+    category: "ml",
+    categoryLabel: "Machine Learning",
+    tech: "PyTorch, CLIP, Gradio, Python",
+    summary:
+      "Built a multimodal image retrieval tool that ranks a local image collection against natural-language or image queries.",
+    highlights: [
+      "Encoded the searchable image cache with OpenAI CLIP and normalized embeddings for cosine-similarity retrieval.",
+      "Supported both text prompts and uploaded reference images through a Gradio interface.",
+      "Added configurable top-k results with similarity scores so users can inspect and compare ranked matches.",
+    ],
+    link: "https://github.com/YashPanchal1012/Semantic-Image-Search",
+    media: [],
+    preview: "Videos/Semantic-Image-Search.mp4",
+    mediaType: "video",
+  },
+  {
     id: "gesture-controlled-xts",
     title: "Gesture Controlled XTS System",
     category: "robotics",
@@ -115,6 +133,57 @@ const portfolioProjects = [
     thumbnail:
       "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
     mediaType: "video",
+  },
+];
+
+const workPositions = [
+  {
+    title: "Beckhoff Automation",
+    role: "Automation Engineering Intern",
+    location: "Savage, MN",
+    logo: "images/Beckhoff_logo.jpg",
+    logoBg: "linear-gradient(135deg, #1d4ed8, #60a5fa)",
+    bullets: [
+      "Developed a gesture-controlled TwinCAT Vision system to manipulate XTS linear movers in real time.",
+      "Created technical solution proposals and proof-of-concept demos for enterprise client projects.",
+      "Assisted application engineers in technical meetings and managed client project data within CRM.",
+    ],
+  },
+  {
+    title:
+      "Department of Electrical and Computer Engineering, University of Minnesota",
+    role: "Depot Assistant",
+    location: "Minneapolis, MN",
+    logo: "images/ece_umn.jpg",
+    logoBg: "linear-gradient(135deg, #7c3aed, #a78bfa)",
+    bullets: [
+      "Maintained lab equipment for multiple ECE courses.",
+      "Assembled 300+ lab kits and performed basic soldering and repairs.",
+      "Advised students on part selection and inventory options.",
+    ],
+  },
+  {
+    title:
+      "Department of Computer Science and Engineering, University of Minnesota",
+    role: "Undergraduate Teaching Assistant",
+    location: "Minneapolis, MN",
+    logo: "images/cs_umn_logo.jpg",
+    logoBg: "linear-gradient(135deg, #0f766e, #2dd4bf)",
+    bullets: [
+      "Led weekly labs for 20+ students and hosted exam prep sessions for Machine Architecture and DSA.",
+      "Held office hours and graded assignments with detailed feedback.",
+    ],
+  },
+  {
+    title: "Housing and Residential Life, University of Minnesota",
+    role: "Hospitality Specialist",
+    location: "Minneapolis, MN",
+    logo: "images/hrl_umn.jpg",
+    logoBg: "linear-gradient(135deg, #b45309, #f59e0b)",
+    bullets: [
+      "Supported residents, enforced policies, and ensured hall safety.",
+      "Conducted rounds, collaborated with staff, and used IRIS for admin tasks.",
+    ],
   },
 ];
 
@@ -261,13 +330,13 @@ function Home() {
             </div>
             <div className="col-sm-4">
               <div className="stat-card">
-                <div className="stat-number">4</div>
+                <div className="stat-number">{portfolioProjects.length}</div>
                 <div className="stat-label">Technical projects</div>
               </div>
             </div>
             <div className="col-sm-4">
               <div className="stat-card">
-                <div className="stat-number">4</div>
+                <div className="stat-number">{workPositions.length}</div>
                 <div className="stat-label">Work roles</div>
               </div>
             </div>
@@ -279,57 +348,6 @@ function Home() {
 }
 
 function WorkPage() {
-  const positions = [
-    {
-      title: "Beckhoff Automation",
-      role: "Automation Engineering Intern",
-      location: "Savage, MN",
-      logo: "images/Beckhoff_logo.jpg",
-      logoBg: "linear-gradient(135deg, #1d4ed8, #60a5fa)",
-      bullets: [
-        "Developed a gesture-controlled TwinCAT Vision system to manipulate XTS linear movers in real time.",
-        "Created technical solution proposals and proof-of-concept demos for enterprise client projects.",
-        "Assisted application engineers in technical meetings and managed client project data within CRM.",
-      ],
-    },
-    {
-      title:
-        "Department of Electrical and Computer Engineering, University of Minnesota",
-      role: "Depot Assistant",
-      location: "Minneapolis, MN",
-      logo: "images/ece_umn.jpg",
-      logoBg: "linear-gradient(135deg, #7c3aed, #a78bfa)",
-      bullets: [
-        "Maintained lab equipment for multiple ECE courses.",
-        "Assembled 300+ lab kits and performed basic soldering and repairs.",
-        "Advised students on part selection and inventory options.",
-      ],
-    },
-    {
-      title:
-        "Department of Computer Science and Engineering, University of Minnesota",
-      role: "Undergraduate Teaching Assistant",
-      location: "Minneapolis, MN",
-      logo: "images/cs_umn_logo.jpg",
-      logoBg: "linear-gradient(135deg, #0f766e, #2dd4bf)",
-      bullets: [
-        "Led weekly labs for 20+ students and hosted exam prep sessions for Machine Architecture and DSA.",
-        "Held office hours and graded assignments with detailed feedback.",
-      ],
-    },
-    {
-      title: "Housing and Residential Life, University of Minnesota",
-      role: "Hospitality Specialist",
-      location: "Minneapolis, MN",
-      logo: "images/hrl_umn.jpg",
-      logoBg: "linear-gradient(135deg, #b45309, #f59e0b)",
-      bullets: [
-        "Supported residents, enforced policies, and ensured hall safety.",
-        "Conducted rounds, collaborated with staff, and used IRIS for admin tasks.",
-      ],
-    },
-  ];
-
   return (
     <div className="container py-5">
       <div className="mb-4">
@@ -337,7 +355,7 @@ function WorkPage() {
       </div>
 
       <div className="row g-4">
-        {positions.map((position) => (
+        {workPositions.map((position) => (
           <div key={position.role} className="col-12">
             <div className="experience-card">
               <div className="d-flex align-items-start gap-3 mb-3">
