@@ -58,8 +58,7 @@ const portfolioProjects = [
     category: "robotics",
     categoryLabel: "Robotics",
     tech: "ROS2, MediaPipe, Gazebo, OpenCV, Python",
-    summary:
-      "Built a real-time ROS 2 pipeline translating webcam-tracked human motion into robotic joint commands.",
+    summary:"Led a 3-person team to build a real-time ROS2 pipeline translating webcam-tracked human motion into robotic joint commands",
     highlights: [
       "Implemented 30 Hz MediaPipe skeletal tracking and computed joint angles using vector mathematics.",
       "Simulated physics-enabled URDF models in Gazebo and tuned motion profiles for stable trajectory execution.",
@@ -145,8 +144,8 @@ const workPositions = [
     logoBg: "linear-gradient(135deg, #1d4ed8, #60a5fa)",
     bullets: [
       "Developed a gesture-controlled TwinCAT Vision system to manipulate XTS linear movers in real time.",
-      "Created technical solution proposals and proof-of-concept demos for enterprise client projects.",
       "Assisted application engineers in technical meetings and managed client project data within CRM.",
+      "Partnered with cross-functional engineering teams to deliver 4+ technical solution proposals and proof-of-concept demos for enterprise clients."
     ],
   },
   {
@@ -159,7 +158,7 @@ const workPositions = [
     bullets: [
       "Maintained lab equipment for multiple ECE courses.",
       "Assembled 300+ lab kits and performed basic soldering and repairs.",
-      "Advised students on part selection and inventory options.",
+      "Communicated daily with faculty and engineering students to advise on part selection, inventory logistics, and lab kit assembly.",
     ],
   },
   {
@@ -170,7 +169,7 @@ const workPositions = [
     logo: "images/cs_umn_logo.jpg",
     logoBg: "linear-gradient(135deg, #0f766e, #2dd4bf)",
     bullets: [
-      "Led weekly labs for 20+ students and hosted exam prep sessions for Machine Architecture and DSA.",
+      "Collaborated with course professors and TA teams to align weekly curriculum, lead labs and exam prep for 20+ students.",
       "Held office hours and graded assignments with detailed feedback.",
     ],
   },
