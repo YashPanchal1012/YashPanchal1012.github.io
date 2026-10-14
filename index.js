@@ -109,6 +109,56 @@ const portfolioProjects = [
     mediaType: "image",
   },
   {
+    id: "panoramic-image-stitching",
+    title: "Panoramic Image Stitching",
+    category: "ml",
+    categoryLabel: "Machine Learning",
+    tech: "OpenCV, SIFT, RANSAC, NumPy, Python",
+    summary:
+      "Implemented an end-to-end computer vision pipeline for panoramic image stitching using SIFT feature matching, robust RANSAC homography estimation, and seamless blending.",
+    highlights: [
+      "Detected SIFT keypoints and filtered multi-view correspondences with Lowe's ratio test (0.7 threshold).",
+      "Estimated planar homographies using normalized DLT and robust RANSAC with adaptive confidence-based early stopping (p=0.99).",
+      "Applied bilinear warping, distance-transform feather blending, gain compensation, and cylindrical projection to produce seamless wide-angle panoramas.",
+    ],
+    link: "https://github.com/YashPanchal1012/Panoramic-Image-Stitching",
+    media: [
+      {
+        type: "image",
+        src: "images/panorama_stitched.jpg",
+        label: "Stitched panorama",
+      },
+      {
+        type: "image",
+        src: "images/panorama_ransac_matches.jpg",
+        label: "RANSAC feature matches",
+      },
+      {
+        type: "image",
+        src: "images/panorama_cylindrical.png",
+        label: "Cylindrical panorama",
+      },
+      {
+        type: "image",
+        src: "images/panorama_feather_blend.png",
+        label: "Feather blending",
+      },
+      {
+        type: "image",
+        src: "images/panorama_least_squares_vs_ransac.png",
+        label: "Least squares vs RANSAC",
+      },
+      {
+        type: "document",
+        src: "Documents/Panoramic Image Stitching Report.pdf",
+        label: "Project report",
+      },
+    ],
+    preview: "images/panorama_preview.png",
+    thumbnail: "images/panorama_preview.png",
+    mediaType: "image",
+  },
+  {
     id: "recipe-hub",
     title: "Recipe Hub",
     category: "web",
