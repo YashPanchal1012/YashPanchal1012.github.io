@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Mail, Check, Sparkles, Terminal } from 'lucide-react';
+import { ArrowDown, Mail, Check, Sparkles, Terminal, FileText } from 'lucide-react';
 
 export default function Hero({ onNavigate, onCopyEmail, copied }) {
   return (
@@ -39,6 +39,17 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
                 <span>Explore Projects</span>
                 <ArrowDown size={16} />
               </button>
+
+              <a
+                href="Documents/Yash_Panchal_Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary"
+                title="View Resume PDF"
+              >
+                <FileText size={16} />
+                <span>View Resume</span>
+              </a>
 
               <button 
                 type="button" 
@@ -100,10 +111,6 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
             <div className="stat-item">
               <div className="stat-number">4</div>
               <div className="stat-label">Industry & Campus Roles</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">30 Hz</div>
-              <div className="stat-label">Real-Time Vision Pipelines</div>
             </div>
           </div>
         </div>

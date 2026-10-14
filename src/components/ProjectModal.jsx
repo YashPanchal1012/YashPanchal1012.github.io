@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ExternalLink, FileText, Video, Image as ImageIcon, Sparkles } from 'lucide-react';
+import { X, ExternalLink, FileText, Video, Image as ImageIcon, Sparkles, Layers } from 'lucide-react';
 
 export default function ProjectModal({ project, onClose }) {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
@@ -75,6 +75,10 @@ export default function ProjectModal({ project, onClose }) {
         {/* Multi-Media Switcher Strip */}
         {mediaList.length > 1 && (
           <div className="modal-media-strip">
+            <span className="media-strip-label">
+              <Layers size={14} />
+              <span>Views:</span>
+            </span>
             {mediaList.map((media, idx) => (
               <button
                 key={media.src + idx}
@@ -82,9 +86,9 @@ export default function ProjectModal({ project, onClose }) {
                 className={`media-thumbnail-btn ${activeMediaIndex === idx ? 'active' : ''}`}
                 onClick={() => setActiveMediaIndex(idx)}
               >
-                {media.type === 'video' && <Video size={13} style={{ display: 'inline', marginRight: '4px' }} />}
-                {media.type === 'image' && <ImageIcon size={13} style={{ display: 'inline', marginRight: '4px' }} />}
-                {media.type === 'document' && <FileText size={13} style={{ display: 'inline', marginRight: '4px' }} />}
+                {media.type === 'video' && <Video size={14} />}
+                {media.type === 'image' && <ImageIcon size={14} />}
+                {media.type === 'document' && <FileText size={14} />}
                 <span>{media.label || `Media ${idx + 1}`}</span>
               </button>
             ))}

@@ -27,11 +27,11 @@ export default function Footer({ onCopyEmail, copied }) {
               onClick={onCopyEmail}
             >
               <Mail size={16} />
-              <span>{copied ? 'Email Copied!' : 'panch063@umn.edu'}</span>
+              <span>{copied ? 'Email Copied!' : 'yashpanchal1326@gmail.com'}</span>
             </button>
 
             <a
-              href="Documents/Yash Panchal's Resume.pdf"
+              href="Documents/Yash_Panchal_Resume.pdf"
               target="_blank"
               rel="noreferrer"
               className="icon-btn"

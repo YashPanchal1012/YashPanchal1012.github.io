@@ -26,7 +26,7 @@ export default function App() {
   };
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('panch063@umn.edu');
+    navigator.clipboard.writeText('yashpanchal1326@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 3000);
   };
@@ -82,7 +82,7 @@ export default function App() {
       {copied && (
         <div className="toast-notice" role="status" aria-live="polite">
           <Check size={18} color="var(--accent-emerald)" />
-          <span>panch063@umn.edu copied to clipboard!</span>
+          <span>yashpanchal1326@gmail.com copied to clipboard!</span>
         </div>
       )}
     </div>

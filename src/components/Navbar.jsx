@@ -41,7 +41,7 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
 
         <div className="nav-actions">
           <a
-            href="Documents/Yash Panchal's Resume.pdf"
+            href="Documents/Yash_Panchal_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="btn-secondary"
