@@ -1,0 +1,57 @@
+export const technicalSkills = [
+  {
+    category: "Perception & Computer Vision",
+    description: "Real-time tracking, feature matching, spatial reasoning",
+    skills: [
+      "OpenCV",
+      "MediaPipe",
+      "SIFT / RANSAC",
+      "Homography & Warping",
+      "Point Clouds & Geometry",
+      "DINOv2",
+      "TwinCAT Vision",
+      "Multimodal CLIP",
+    ],
+  },
+  {
+    category: "Robotics & Motion Control",
+    description: "Industrial automation, kinematic control, ROS2",
+    skills: [
+      "ROS2",
+      "TwinCAT 3 (PLC)",
+      "Beckhoff XTS",
+      "Gazebo Simulation",
+      "URDF Modeling",
+      "Inverse Kinematics",
+      "Real-Time Determinism",
+      "Collision Avoidance",
+    ],
+  },
+  {
+    category: "AI, Machine Learning & Systems",
+    description: "Deep learning models, foundation vision, deployment",
+    skills: [
+      "PyTorch",
+      "ONNX Runtime",
+      "Vision Transformers",
+      "Vector Search & Cosine Sim",
+      "Model Quantization",
+      "NumPy / SciPy",
+      "Gradio",
+    ],
+  },
+  {
+    category: "Languages & Frameworks",
+    description: "Core languages, full-stack architecture, tooling",
+    skills: [
+      "Python",
+      "C / C++",
+      "JavaScript (ES6+)",
+      "React",
+      "Django",
+      "Structured Text (IEC 61131-3)",
+      "Git / GitHub Actions",
+      "Linux / Bash",
+    ],
+  },
+];
