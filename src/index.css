@@ -557,6 +557,12 @@ body::before {
   transition: transform 0.4s ease;
 }
 
+.card-media-wrapper img[src$=".gif"] {
+  object-fit: contain;
+  background: #04060a;
+  padding: 0.5rem;
+}
+
 .project-card:hover .card-media-wrapper video,
 .project-card:hover .card-media-wrapper img {
   transform: scale(1.03);
@@ -909,11 +915,31 @@ body::before {
   flex-shrink: 0;
 }
 
-.modal-media-viewport video,
-.modal-media-viewport img {
+.modal-media-viewport video {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.modal-media-viewport img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-media-viewport img.modal-media-gif,
+.modal-media-viewport img[src$=".gif"] {
+  width: auto;
+  max-width: 380px;
+  max-height: 350px;
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .modal-media-viewport iframe {

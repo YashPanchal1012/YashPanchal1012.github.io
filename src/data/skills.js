@@ -32,6 +32,7 @@ export const technicalSkills = [
     description: "Deep learning models, foundation vision, deployment",
     skills: [
       "PyTorch",
+      "Flow Matching & Generative AI",
       "ONNX Runtime",
       "Vision Transformers",
       "Vector Search & Cosine Sim",
