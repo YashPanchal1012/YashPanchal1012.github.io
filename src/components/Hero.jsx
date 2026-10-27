@@ -105,8 +105,8 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
               <div className="stat-label">Years of Engineering Study</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">6+</div>
-              <div className="stat-label">Core Perception & AI Systems</div>
+              <div className="stat-number">7+</div>
+              <div className="stat-label">Technical Projects</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">4</div>

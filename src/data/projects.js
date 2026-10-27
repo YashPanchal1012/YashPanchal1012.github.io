@@ -76,6 +76,68 @@ export const portfolioProjects = [
     featured: true,
   },
   {
+    id: "flow-matching",
+    title: "Flow-Matching Generative Models",
+    category: "ml",
+    categoryLabel: "Computer Vision & ML",
+    tech: ["PyTorch", "Flow Matching", "U-Net", "Optimal Transport", "Heun ODE", "Gradio", "Python"],
+    telemetry: {
+      accuracy: "89.1% Eval Score",
+      capacity: "3.91M Param U-Net",
+      sampler: "50-Step Heun ODE",
+    },
+    summary:
+      "Engineered continuous-time flow-matching generative models from scratch in PyTorch, progressing from 2D vector field distributions to a 3.91M-parameter Residual GroupNorm U-Net for unconditional image synthesis across MNIST and CIFAR-10.",
+    highlights: [
+      "Formulated continuous-time probability paths and implemented Optimal Transport (OT) displacement interpolation, straightening flow trajectories and accelerating convergence.",
+      "Architected a 3.91M-parameter Residual GroupNorm U-Net featuring 32-dim sinusoidal timestep embeddings, zero-initialized residual connections, and second-order Heun ODE numerical integration.",
+      "Executed a systematic 20-trial ablation study optimizing network capacity, cosine learning rate schedules (CLR), batch size, and integration steps to achieve an 89.1% classifier recognition score.",
+      "Adapted the generative pipeline to 3-channel CIFAR-10 natural image synthesis and built an interactive Gradio web application for real-time trajectory visualization and noise sampling.",
+    ],
+    link: "https://github.com/YashPanchal1012/Flow-Matching",
+    media: [
+      {
+        type: "image",
+        src: "images/cifar10_generation_animation.gif",
+        label: "CIFAR-10 Flow Animation (ODE Trajectory)",
+      },
+      {
+        type: "image",
+        src: "images/flow_matching_architecture.png",
+        label: "Residual GroupNorm U-Net Architecture",
+      },
+      {
+        type: "image",
+        src: "images/flow_matching_sampler.png",
+        label: "Interactive Gradio Sampler & Diagnostics",
+      },
+      {
+        type: "image",
+        src: "images/flow_matching_cifar10.png",
+        label: "Generated CIFAR-10 Samples (50 Heun Steps)",
+      },
+      {
+        type: "image",
+        src: "images/flow_matching_mnist_samples.png",
+        label: "Final MNIST Generations (89.1% Confidence)",
+      },
+      {
+        type: "image",
+        src: "images/flow_matching_velocity_field.png",
+        label: "2D Toy Flow Vector Field Dynamics",
+      },
+      {
+        type: "document",
+        src: "Documents/Flow Matching Technical Report.pdf",
+        label: "Technical Report & Derivations (PDF)",
+      },
+    ],
+    preview: "images/cifar10_generation_animation.gif",
+    thumbnail: "images/cifar10_generation_animation.gif",
+    mediaType: "image",
+    featured: true,
+  },
+  {
     id: "panoramic-image-stitching",
     title: "Panoramic Image Stitching Pipeline",
     category: "ml",

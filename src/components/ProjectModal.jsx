@@ -60,6 +60,7 @@ export default function ProjectModal({ project, onClose }) {
               key={activeMedia.src}
               src={activeMedia.src}
               alt={activeMedia.label || project.title}
+              className={activeMedia.src?.endsWith('.gif') ? 'modal-media-gif' : 'modal-media-img'}
             />
           )}
 
