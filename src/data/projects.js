@@ -95,6 +95,7 @@ export const portfolioProjects = [
       "Adapted the generative pipeline to 3-channel CIFAR-10 natural image synthesis and built an interactive Gradio web application for real-time trajectory visualization and noise sampling.",
     ],
     link: "https://github.com/YashPanchal1012/Flow-Matching",
+    liveUrl: "https://yashpanchal1012-flow-matching.hf.space/",
     media: [
       {
         type: "image",
@@ -252,6 +253,7 @@ export const portfolioProjects = [
       "Implemented configurable top-k nearest-neighbor retrieval with similarity score telemetry.",
     ],
     link: "https://github.com/YashPanchal1012/Semantic-Image-Search",
+    liveUrl: "https://yashpanchal1012-semantic-image-search.hf.space/",
     media: [
       {
         type: "video",
@@ -283,6 +285,7 @@ export const portfolioProjects = [
       "Optimized query filtering for fast local retrieval and ingredient-matching calculations.",
     ],
     link: "https://github.com/YashPanchal1012/recipe_hub",
+    liveUrl: "https://recipe-hub-virid.vercel.app/",
     media: [
       {
         type: "video",

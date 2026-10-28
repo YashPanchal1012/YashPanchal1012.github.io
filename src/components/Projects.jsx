@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { portfolioProjects } from '../data/projects';
 import { ExternalLink, Play, Sparkles, ArrowRight } from 'lucide-react';
+import { GithubIcon } from './Icons';
 
 export default function Projects({ onSelectProject }) {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -106,18 +107,33 @@ export default function Projects({ onSelectProject }) {
                     <ArrowRight size={15} />
                   </button>
 
-                  {project.link && project.link !== '#' && (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="icon-btn"
-                      title="View GitHub Repository"
-                      aria-label={`View GitHub repository for ${project.title}`}
-                    >
-                      <ExternalLink size={15} />
-                    </a>
-                  )}
+                  <div className="card-actions-group">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="icon-btn live-demo-btn"
+                        title="Open Live Demo"
+                        aria-label={`Open live demo for ${project.title}`}
+                      >
+                        <ExternalLink size={15} />
+                      </a>
+                    )}
+
+                    {project.link && project.link !== '#' && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="icon-btn"
+                        title="View GitHub Repository"
+                        aria-label={`View GitHub repository for ${project.title}`}
+                      >
+                        <GithubIcon size={15} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </article>

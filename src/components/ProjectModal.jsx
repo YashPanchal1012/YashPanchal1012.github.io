@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, ExternalLink, FileText, Video, Image as ImageIcon, Sparkles, Layers } from 'lucide-react';
+import { GithubIcon } from './Icons';
 
 export default function ProjectModal({ project, onClose }) {
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
@@ -106,17 +107,31 @@ export default function ProjectModal({ project, onClose }) {
               <h2 className="modal-title">{project.title}</h2>
             </div>
 
-            {project.link && project.link !== '#' && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary"
-              >
-                <ExternalLink size={16} />
-                <span>GitHub Repository</span>
-              </a>
-            )}
+            <div className="modal-actions-group">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary"
+                >
+                  <ExternalLink size={16} />
+                  <span>Live Demo</span>
+                </a>
+              )}
+
+              {project.link && project.link !== '#' && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary"
+                >
+                  <GithubIcon size={16} />
+                  <span>GitHub Repository</span>
+                </a>
+              )}
+            </div>
           </div>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.02rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
