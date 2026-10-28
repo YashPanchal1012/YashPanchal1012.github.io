@@ -1137,3 +1137,45 @@ body::before {
     height: 250px;
   }
 }
+
+
+/* Project Live Demo & Actions Enhancements */
+.card-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-btn.live-demo-btn {
+  color: var(--accent-cyan);
+  border-color: rgba(56, 189, 248, 0.4);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.icon-btn.live-demo-btn:hover {
+  color: #fff;
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 14px var(--accent-cyan-glow);
+  transform: translateY(-2px);
+}
+
+[data-theme='light'] .icon-btn.live-demo-btn {
+  border-color: rgba(2, 132, 199, 0.35);
+  background: rgba(2, 132, 199, 0.08);
+  color: var(--accent-cyan);
+}
+
+[data-theme='light'] .icon-btn.live-demo-btn:hover {
+  color: #fff;
+  background: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 14px var(--accent-cyan-glow);
+}
+
+.modal-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
