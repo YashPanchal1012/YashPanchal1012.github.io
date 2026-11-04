@@ -50,16 +50,16 @@ export const portfolioProjects = [
     categoryLabel: "Robotics & Perception",
     tech: ["ROS2", "MediaPipe", "Gazebo", "OpenCV", "Python", "URDF"],
     telemetry: {
-      fps: "30 Hz Tracking",
-      dof: "6-DOF Arm",
+      fps: "30 FPS Tracking",
+      joints: "3 Revolute + Gripper",
       sim: "Gazebo Physics",
     },
     summary:
-      "Led a 3-person engineering team to build an end-to-end real-time ROS2 pipeline translating webcam-tracked human skeletal motion into responsive robotic joint commands.",
+      "Led a 3-person engineering team to build an end-to-end ROS2 pipeline translating webcam-tracked human arm landmarks into smooth joint commands for a simulated robotic arm in Gazebo.",
     highlights: [
-      "Implemented 30 Hz MediaPipe skeletal tracking and computed inverse joint angles using 3D vector geometry.",
-      "Simulated physics-enabled URDF models in Gazebo and tuned motion profiles for stable trajectory execution.",
-      "Bridged real-time human movement telemetry into ROS2 control nodes for fluid robotic imitation.",
+      "Implemented 30 FPS MediaPipe pose and hand tracking, calculating continuous joint angles using 2D vector dot products and trigonometric mapping.",
+      "Simulated a physics-enabled URDF arm and 2-finger gripper in Gazebo, calibrating trajectory interpolation profiles to prevent abrupt snapping.",
+      "Mapped continuous joint angles and gesture triggers with hysteresis debouncing into ROS 2 JointTrajectory commands for intuitive simulated teleoperation.",
     ],
     link: "https://github.com/YashPanchal1012/csci-4551-final-project",
     media: [
@@ -68,6 +68,11 @@ export const portfolioProjects = [
         src: "Videos/Demo-video.mp4",
         poster: "images/Final Project (Thumbnail).png",
         label: "Robotic Arm ROS2 Demo",
+      },
+      {
+        type: "document",
+        src: "Documents/VORA - Final Project Report (CSCI 4551).pdf",
+        label: "Technical Report (PDF)",
       },
     ],
     preview: "Videos/Demo-video.mp4",
@@ -91,7 +96,7 @@ export const portfolioProjects = [
     highlights: [
       "Formulated continuous-time probability paths and implemented Optimal Transport (OT) displacement interpolation, straightening flow trajectories and accelerating convergence.",
       "Architected a 3.91M-parameter Residual GroupNorm U-Net featuring 32-dim sinusoidal timestep embeddings, zero-initialized residual connections, and second-order Heun ODE numerical integration.",
-      "Executed a systematic 20-trial ablation study optimizing network capacity, cosine learning rate schedules (CLR), batch size, and integration steps to achieve an 89.1% classifier recognition score.",
+      "Executed a systematic 18-trial ablation study optimizing network capacity, cosine learning rate schedules (CLR), batch size, and integration steps to achieve an 89.1% classifier recognition score.",
       "Adapted the generative pipeline to 3-channel CIFAR-10 natural image synthesis and built an interactive Gradio web application for real-time trajectory visualization and noise sampling.",
     ],
     link: "https://github.com/YashPanchal1012/Flow-Matching",
@@ -147,7 +152,7 @@ export const portfolioProjects = [
     telemetry: {
       ratio: "Lowe's 0.7",
       confidence: "p = 0.99",
-      blending: "Multi-band Feather",
+      blending: "Feather Blending",
     },
     summary:
       "Implemented an end-to-end computer vision pipeline for panoramic image stitching using SIFT feature matching, robust RANSAC homography estimation, and seamless cylindrical blending.",
@@ -260,6 +265,11 @@ export const portfolioProjects = [
         src: "Videos/Semantic-Image-Search.mp4",
         poster: "images/Headshot1.jpg",
         label: "Semantic Search Demo",
+      },
+      {
+        type: "document",
+        src: "Documents/Semantic Image Search Report.pdf",
+        label: "Technical Report (PDF)",
       },
     ],
     preview: "Videos/Semantic-Image-Search.mp4",
