@@ -144,6 +144,87 @@ export const portfolioProjects = [
     featured: true,
   },
   {
+    id: "3d-scene-reconstruction",
+    title: "3D Scene Reconstruction & Gaussian Splatting",
+    category: "ml",
+    categoryLabel: "Computer Vision & ML",
+    tech: [
+      "PyCOLMAP",
+      "3D Gaussian Splatting",
+      "OpenCV",
+      "SIFT / RANSAC",
+      "SciPy (Levenberg-Marquardt)",
+      "NumPy / SVD",
+      "Python",
+    ],
+    telemetry: {
+      gaussians: "190K Splats",
+      reprojection: "0.34 px RMS",
+      novelPSNR: "25.74 dB PSNR",
+    },
+    summary:
+      "Engineered an end-to-end 3D reconstruction and novel view synthesis pipeline, progressing from two-view epipolar geometry and linear SVD triangulation to multi-view PyCOLMAP Structure-from-Motion (SfM) and 3D Gaussian Splatting.",
+    highlights: [
+      "Calibrated camera intrinsics with PyCOLMAP and estimated relative poses (R, t) via SIFT feature matching, Lowe's ratio test (0.75), and 5-point RANSAC Essential matrix decomposition with cheirality verification.",
+      "Formulated linear triangulation using Singular Value Decomposition (SVD), achieving 0.367 px joint RMS reprojection error on real correspondences and 1e-14 m error on synthetic verification.",
+      "Optimized 3D coordinates via non-linear Levenberg-Marquardt least-squares refinement, reducing joint RMS reprojection error to 0.338 px (-7.9% reduction).",
+      "Executed incremental Structure-from-Motion across 38 scene views using PyCOLMAP, registering 100% of images to reconstruct 15,129 sparse 3D points from 73,146 observations (0.868 px mean error).",
+      "Trained a 3D Gaussian Splatting model (190,356 Gaussians) in 4.06 min on an RTX 3070 GPU, evaluating 4 held-out novel views to achieve 25.74 dB mean PSNR.",
+    ],
+    link: "https://github.com/YashPanchal1012/3D-Reconstruction",
+    media: [
+      {
+        type: "image",
+        src: "images/splat_novel_view.png",
+        label: "3D Gaussian Splat (Novel View Render)",
+      },
+      {
+        type: "image",
+        src: "images/splat_viewpoint_comparison.png",
+        label: "Viewpoint Comparison (Training vs Novel vs Outer)",
+      },
+      {
+        type: "image",
+        src: "images/colmap_sparse_model.png",
+        label: "COLMAP Sparse Multi-View Model (15,129 Points)",
+      },
+      {
+        type: "image",
+        src: "images/splat_training_progression.png",
+        label: "Training Progression (1k, 5k, 10k Steps)",
+      },
+      {
+        type: "image",
+        src: "images/splat_held_out_evaluation.jpg",
+        label: "Held-Out Novel View Evaluation (4 Views, 25.74 dB PSNR)",
+      },
+      {
+        type: "image",
+        src: "images/two_view_pointcloud.png",
+        label: "Two-View SVD Point Cloud & Camera Geometry",
+      },
+      {
+        type: "image",
+        src: "images/triangulation_refinement_comparison.png",
+        label: "SVD vs Levenberg-Marquardt Refinement",
+      },
+      {
+        type: "image",
+        src: "images/reprojection_panel.png",
+        label: "Observed Keypoints vs Reprojected 3D Points",
+      },
+      {
+        type: "document",
+        src: "Documents/3D Scene Reconstruction Report (CSCI 5561).pdf",
+        label: "Technical Report (PDF)",
+      },
+    ],
+    preview: "images/splat_novel_view.png",
+    thumbnail: "images/splat_novel_view.png",
+    mediaType: "image",
+    featured: true,
+  },
+  {
     id: "panoramic-image-stitching",
     title: "Panoramic Image Stitching Pipeline",
     category: "ml",

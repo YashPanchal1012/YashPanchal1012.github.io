@@ -6,6 +6,8 @@ export const technicalSkills = [
       "OpenCV",
       "MediaPipe",
       "SIFT / RANSAC",
+      "3D Gaussian Splatting",
+      "Structure-from-Motion (COLMAP)",
       "Homography & Warping",
       "Point Clouds & Geometry",
       "DINOv2",
