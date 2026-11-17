@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ExternalLink, FileText, Video, Image as ImageIcon, Sparkles, Layers } from 'lucide-react';
+import { X, ExternalLink, FileText, Video, Image as ImageIcon, Layers } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function ProjectModal({ project, onClose }) {
@@ -38,7 +38,7 @@ export default function ProjectModal({ project, onClose }) {
           onClick={onClose} 
           aria-label="Close Project Modal"
         >
-          <X size={20} />
+          <X size={18} />
         </button>
 
         {/* Media Viewport */}
@@ -78,8 +78,8 @@ export default function ProjectModal({ project, onClose }) {
         {mediaList.length > 1 && (
           <div className="modal-media-strip">
             <span className="media-strip-label">
-              <Layers size={14} />
-              <span>Views:</span>
+              <Layers size={13} />
+              <span>Media ({mediaList.length}):</span>
             </span>
             {mediaList.map((media, idx) => (
               <button
@@ -88,10 +88,10 @@ export default function ProjectModal({ project, onClose }) {
                 className={`media-thumbnail-btn ${activeMediaIndex === idx ? 'active' : ''}`}
                 onClick={() => setActiveMediaIndex(idx)}
               >
-                {media.type === 'video' && <Video size={14} />}
-                {media.type === 'image' && <ImageIcon size={14} />}
-                {media.type === 'document' && <FileText size={14} />}
-                <span>{media.label || `Media ${idx + 1}`}</span>
+                {media.type === 'video' && <Video size={13} />}
+                {media.type === 'image' && <ImageIcon size={13} />}
+                {media.type === 'document' && <FileText size={13} />}
+                <span>{media.label || `View ${idx + 1}`}</span>
               </button>
             ))}
           </div>
@@ -101,7 +101,7 @@ export default function ProjectModal({ project, onClose }) {
         <div className="modal-body">
           <div className="modal-meta-row">
             <div>
-              <span className="category-badge" style={{ position: 'static', marginBottom: '0.6rem', display: 'inline-block' }}>
+              <span className="category-tag" style={{ display: 'inline-block', marginBottom: '0.5rem' }}>
                 {project.categoryLabel}
               </span>
               <h2 className="modal-title">{project.title}</h2>
@@ -115,7 +115,7 @@ export default function ProjectModal({ project, onClose }) {
                   rel="noreferrer"
                   className="btn-primary"
                 >
-                  <ExternalLink size={16} />
+                  <ExternalLink size={15} />
                   <span>Live Demo</span>
                 </a>
               )}
@@ -127,14 +127,14 @@ export default function ProjectModal({ project, onClose }) {
                   rel="noreferrer"
                   className="btn-secondary"
                 >
-                  <GithubIcon size={16} />
+                  <GithubIcon size={15} />
                   <span>GitHub Repository</span>
                 </a>
               )}
             </div>
           </div>
 
-          <p style={{ color: 'var(--text-secondary)', fontSize: '1.02rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+          <p className="modal-summary">
             {project.summary}
           </p>
 
@@ -142,9 +142,8 @@ export default function ProjectModal({ project, onClose }) {
           {project.telemetry && (
             <div className="telemetry-row" style={{ marginBottom: '1.5rem' }}>
               {Object.entries(project.telemetry).map(([k, v]) => (
-                <span key={k} className="telemetry-chip" style={{ fontSize: '0.82rem', padding: '0.35rem 0.8rem' }}>
-                  <Sparkles size={12} />
-                  <span><strong>{k.toUpperCase()}:</strong> {v}</span>
+                <span key={k} className="telemetry-chip">
+                  <span style={{ color: 'var(--text-muted)' }}>{k.toUpperCase()}:</span> {v}
                 </span>
               ))}
             </div>
@@ -153,8 +152,8 @@ export default function ProjectModal({ project, onClose }) {
           {/* Highlights */}
           {project.highlights?.length > 0 && (
             <div style={{ marginBottom: '1.75rem' }}>
-              <h4 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.85rem', color: 'var(--text-primary)' }}>
-                System Architecture & Key Implementations
+              <h4 className="modal-section-title">
+                Technical Highlights & Implementations
               </h4>
               <ul className="exp-bullets">
                 {project.highlights.map((bullet, i) => (
@@ -166,12 +165,12 @@ export default function ProjectModal({ project, onClose }) {
 
           {/* Tech Stack Chips */}
           <div>
-            <h4 style={{ fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)', marginBottom: '0.65rem' }}>
-              Technologies Utilized
+            <h4 className="modal-section-title">
+              Technologies & Tools
             </h4>
             <div className="tech-tag-row">
               {project.tech.map((t) => (
-                <span key={t} className="tech-chip" style={{ fontSize: '0.82rem', padding: '0.3rem 0.7rem' }}>
+                <span key={t} className="tech-chip">
                   {t}
                 </span>
               ))}

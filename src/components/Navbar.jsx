@@ -12,7 +12,7 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
 
   return (
     <header className="navbar-wrapper">
-      <nav className="navbar-pill" aria-label="Main Navigation">
+      <nav className="navbar-bar" aria-label="Main Navigation">
         <a 
           href="#about" 
           className="nav-brand"
@@ -21,8 +21,7 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
             onNavigate('about');
           }}
         >
-          <span className="brand-dot" />
-          <span>Yash Panchal</span>
+          <span className="brand-name">Yash Panchal</span>
         </a>
 
         <ul className="nav-links">
@@ -44,10 +43,10 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
             href="Documents/Yash_Panchal_Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="btn-secondary"
+            className="btn-nav-resume"
             title="View Resume PDF"
           >
-            <FileText size={16} />
+            <FileText size={14} />
             <span>Resume</span>
           </a>
 
@@ -59,7 +58,7 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
             aria-label="GitHub Profile"
             title="GitHub"
           >
-            <GithubIcon size={18} />
+            <GithubIcon size={16} />
           </a>
 
           <a
@@ -70,7 +69,7 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
             aria-label="LinkedIn Profile"
             title="LinkedIn"
           >
-            <LinkedinIcon size={18} />
+            <LinkedinIcon size={16} />
           </a>
 
           <button
@@ -80,7 +79,7 @@ export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }
             aria-label="Toggle Theme"
             title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
         </div>
       </nav>

@@ -12,21 +12,19 @@ export default function Footer({ onCopyEmail, copied }) {
       <div className="container">
         <div className="footer-content">
           <div>
-            <h3 style={{ fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.4rem', color: 'var(--text-primary)' }}>
-              Yash Panchal
-            </h3>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem' }}>
+            <h3 className="footer-title">Yash Panchal</h3>
+            <p className="footer-subtitle">
               Robotics & Computer Vision Engineer • Minneapolis, MN
             </p>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+          <div className="footer-actions">
             <button 
               type="button" 
               className="btn-secondary" 
               onClick={onCopyEmail}
             >
-              <Mail size={16} />
+              <Mail size={15} />
               <span>{copied ? 'Email Copied!' : 'yashpanchal1326@gmail.com'}</span>
             </button>
 
@@ -36,8 +34,9 @@ export default function Footer({ onCopyEmail, copied }) {
               rel="noreferrer"
               className="icon-btn"
               title="Resume PDF"
+              aria-label="Resume PDF"
             >
-              <FileText size={18} />
+              <FileText size={16} />
             </a>
 
             <a
@@ -46,8 +45,9 @@ export default function Footer({ onCopyEmail, copied }) {
               rel="noreferrer"
               className="icon-btn"
               title="GitHub"
+              aria-label="GitHub"
             >
-              <GithubIcon size={18} />
+              <GithubIcon size={16} />
             </a>
 
             <a
@@ -56,8 +56,9 @@ export default function Footer({ onCopyEmail, copied }) {
               rel="noreferrer"
               className="icon-btn"
               title="LinkedIn"
+              aria-label="LinkedIn"
             >
-              <LinkedinIcon size={18} />
+              <LinkedinIcon size={16} />
             </a>
 
             <button
@@ -67,17 +68,17 @@ export default function Footer({ onCopyEmail, copied }) {
               title="Back to Top"
               aria-label="Back to Top"
             >
-              <ArrowUp size={18} />
+              <ArrowUp size={16} />
             </button>
           </div>
         </div>
 
-        <div style={{ borderTop: '1px solid var(--border-subtle)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <div className="footer-bottom-row">
           <p className="footer-copy">
             © {new Date().getFullYear()} Yash Panchal. All rights reserved.
           </p>
           <p className="footer-copy">
-            Built with React & Vite • Optimized for Performance
+            Minneapolis, MN • University of Minnesota
           </p>
         </div>
       </div>

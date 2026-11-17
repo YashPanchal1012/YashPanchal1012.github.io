@@ -4,13 +4,12 @@ import { MapPin, Calendar } from 'lucide-react';
 
 export default function Experience() {
   return (
-    <section id="experience" className="experience-section" style={{ padding: '2rem 0' }}>
+    <section id="experience" className="experience-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Career History</span>
           <h2 className="section-title">Work Experience</h2>
           <p className="section-desc">
-            Industry robotics engineering, undergraduate teaching, lab operations, and hardware testing.
+            Industrial robotics engineering, undergraduate instruction, and hardware test operations.
           </p>
         </div>
 
@@ -30,7 +29,7 @@ export default function Experience() {
                   <div className="exp-title-row">
                     <h3 className="exp-company">{exp.title}</h3>
                     <span className="exp-period">
-                      <Calendar size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
+                      <Calendar size={12} style={{ display: 'inline', marginRight: '5px', verticalAlign: '-1px' }} />
                       {exp.period}
                     </span>
                   </div>
@@ -38,7 +37,7 @@ export default function Experience() {
                   <div className="exp-role-row">
                     <span className="exp-role">{exp.role}</span>
                     <span className="exp-location">
-                      <MapPin size={13} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
+                      <MapPin size={12} style={{ display: 'inline', marginRight: '4px', verticalAlign: '-1px' }} />
                       {exp.location}
                     </span>
                   </div>
@@ -51,7 +50,7 @@ export default function Experience() {
                 ))}
               </ul>
 
-              <div className="tech-tag-row" style={{ marginTop: '1rem' }}>
+              <div className="tech-tag-row">
                 {exp.tags.map((tag) => (
                   <span key={tag} className="tech-chip">{tag}</span>
                 ))}

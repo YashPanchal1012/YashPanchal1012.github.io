@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { portfolioProjects } from '../data/projects';
-import { ExternalLink, Play, Sparkles, ArrowRight } from 'lucide-react';
+import { ExternalLink, ArrowRight } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
 export default function Projects({ onSelectProject }) {
@@ -18,13 +18,12 @@ export default function Projects({ onSelectProject }) {
     : portfolioProjects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="projects-section" style={{ padding: '2rem 0' }}>
+    <section id="projects" className="projects-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Engineered Solutions</span>
           <h2 className="section-title">Technical Projects</h2>
           <p className="section-desc">
-            Production-grade automation, machine vision algorithms, neural perception models, and full-stack software.
+            Robotics hardware control, spatial geometry algorithms, neural perception models, and full-stack software.
           </p>
         </div>
 
@@ -53,8 +52,7 @@ export default function Projects({ onSelectProject }) {
               onClick={() => onSelectProject(project)}
             >
               <div className="card-media-wrapper">
-                <span className="category-badge">{project.categoryLabel}</span>
-                {project.featured && <span className="featured-pill">Featured</span>}
+                <span className="category-tag">{project.categoryLabel}</span>
 
                 {project.mediaType === 'video' ? (
                   <video
@@ -75,16 +73,18 @@ export default function Projects({ onSelectProject }) {
               </div>
 
               <div className="card-content">
-                <h3 className="card-title">{project.title}</h3>
+                <div className="card-title-row">
+                  <h3 className="card-title">{project.title}</h3>
+                </div>
+                
                 <p className="card-summary">{project.summary}</p>
 
-                {/* Telemetry Chips */}
+                {/* Telemetry Chips (Clean Monospace Badges, No Sparkles) */}
                 {project.telemetry && (
                   <div className="telemetry-row">
                     {Object.entries(project.telemetry).map(([key, val]) => (
                       <span key={key} className="telemetry-chip">
-                        <Sparkles size={11} />
-                        <span>{val}</span>
+                        {val}
                       </span>
                     ))}
                   </div>
@@ -103,8 +103,8 @@ export default function Projects({ onSelectProject }) {
                     className="btn-inspect"
                     onClick={() => onSelectProject(project)}
                   >
-                    <span>Inspect System</span>
-                    <ArrowRight size={15} />
+                    <span>View Details</span>
+                    <ArrowRight size={14} />
                   </button>
 
                   <div className="card-actions-group">
@@ -113,11 +113,11 @@ export default function Projects({ onSelectProject }) {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="icon-btn live-demo-btn"
+                        className="icon-btn-compact"
                         title="Open Live Demo"
                         aria-label={`Open live demo for ${project.title}`}
                       >
-                        <ExternalLink size={15} />
+                        <ExternalLink size={14} />
                       </a>
                     )}
 
@@ -126,11 +126,11 @@ export default function Projects({ onSelectProject }) {
                         href={project.link}
                         target="_blank"
                         rel="noreferrer"
-                        className="icon-btn"
+                        className="icon-btn-compact"
                         title="View GitHub Repository"
                         aria-label={`View GitHub repository for ${project.title}`}
                       >
-                        <GithubIcon size={15} />
+                        <GithubIcon size={14} />
                       </a>
                     )}
                   </div>

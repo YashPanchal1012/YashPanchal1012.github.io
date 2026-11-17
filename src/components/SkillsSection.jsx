@@ -4,20 +4,19 @@ import { Cpu, Eye, Bot, Code } from 'lucide-react';
 
 export default function SkillsSection() {
   const getIcon = (cat) => {
-    if (cat.includes('Vision')) return <Eye size={20} color="var(--accent-cyan)" />;
-    if (cat.includes('Robotics')) return <Bot size={20} color="var(--accent-cyan)" />;
-    if (cat.includes('AI')) return <Cpu size={20} color="var(--accent-cyan)" />;
-    return <Code size={20} color="var(--accent-cyan)" />;
+    if (cat.includes('Vision')) return <Eye size={18} />;
+    if (cat.includes('Robotics')) return <Bot size={18} />;
+    if (cat.includes('AI')) return <Cpu size={18} />;
+    return <Code size={18} />;
   };
 
   return (
-    <section id="skills" className="skills-section" style={{ padding: '2rem 0' }}>
+    <section id="skills" className="skills-section">
       <div className="container">
         <div className="section-header">
-          <span className="section-tag">Core Competencies</span>
           <h2 className="section-title">Technical Expertise</h2>
           <p className="section-desc">
-            Categorized engineering skills developed through industrial internships, robotics coursework, and research.
+            Core technical competencies developed through industrial engineering, academic research, and system implementation.
           </p>
         </div>
 
@@ -25,8 +24,8 @@ export default function SkillsSection() {
           {technicalSkills.map((domain) => (
             <div key={domain.category} className="skill-domain-card">
               <div className="domain-header">
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem' }}>
-                  {getIcon(domain.category)}
+                <div className="domain-title-row">
+                  <span className="domain-icon">{getIcon(domain.category)}</span>
                   <h3 className="domain-name">{domain.category}</h3>
                 </div>
                 <p className="domain-desc">{domain.description}</p>

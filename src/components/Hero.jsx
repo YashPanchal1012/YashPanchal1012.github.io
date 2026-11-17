@@ -1,34 +1,26 @@
 import React from 'react';
-import { ArrowDown, Mail, Check, Sparkles, Terminal, FileText } from 'lucide-react';
+import { ArrowDown, Mail, Check, FileText } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Hero({ onNavigate, onCopyEmail, copied }) {
   return (
     <section id="about" className="hero-section">
       <div className="container">
-        <div className="bento-grid">
-          {/* Main Bio Card */}
-          <div className="bento-card bento-intro">
-            <div>
-              <div className="status-badge">
-                <span className="pulse-circle" />
-                <span>Available for Full-Time Roles • Minneapolis, MN</span>
-              </div>
-
-              <h1 className="hero-title">
-                Building Real-Time <br />
-                <span className="gradient-text">Robotics & Vision</span> Systems
-              </h1>
-
-              <div className="hero-subtitle">
-                Computer Science @ University of Minnesota - Twin Cities
-              </div>
-
-              <p className="hero-bio">
-                I specialize in real-time computer vision, intelligent robotic manipulation, and machine learning pipelines. 
-                My experience bridges machine vision models directly into industrial deterministic control loops (Beckhoff TwinCAT) 
-                and ROS2 robotic simulation, translating raw camera pixels into responsive kinematic motion.
-              </p>
+        <div className="hero-grid">
+          {/* Main Bio Column */}
+          <div className="hero-intro">
+            <div className="hero-header-block">
+              <span className="hero-kicker">Portfolio & Engineering Notes</span>
+              <h1 className="hero-name">Yash Panchal</h1>
+              <p className="hero-role">Robotics & Computer Vision Engineer</p>
+              <p className="hero-school">B.S. in Computer Science — University of Minnesota, Twin Cities</p>
             </div>
+
+            <p className="hero-bio">
+              Specializing in real-time robotic perception, 3D computer vision, and industrial motion control.
+              Experienced in deploying machine vision inference directly into deterministic PLC environments
+              (Beckhoff TwinCAT) and ROS2 simulation workflows, translating spatial data into deterministic kinematic action.
+            </p>
 
             <div className="hero-cta-group">
               <button 
@@ -36,8 +28,8 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
                 className="btn-primary" 
                 onClick={() => onNavigate('projects')}
               >
-                <span>Explore Projects</span>
-                <ArrowDown size={16} />
+                <span>View Projects</span>
+                <ArrowDown size={15} />
               </button>
 
               <a
@@ -45,28 +37,53 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"
-                title="View Resume PDF"
+                title="Open Resume PDF"
               >
-                <FileText size={16} />
-                <span>View Resume</span>
+                <FileText size={15} />
+                <span>Resume</span>
               </a>
 
               <button 
                 type="button" 
                 className="btn-secondary" 
                 onClick={onCopyEmail}
+                title="Copy email address"
               >
-                {copied ? <Check size={16} color="var(--accent-emerald)" /> : <Mail size={16} />}
-                <span>{copied ? 'Email Copied!' : 'Copy Email'}</span>
+                {copied ? <Check size={15} color="var(--accent)" /> : <Mail size={15} />}
+                <span>{copied ? 'Copied' : 'Email'}</span>
               </button>
+
+              <div className="hero-social-links">
+                <a
+                  href="https://github.com/YashPanchal1012"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-btn"
+                  title="GitHub Profile"
+                  aria-label="GitHub Profile"
+                >
+                  <GithubIcon size={17} />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/yashwardhan-panchal-2829b8282/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-btn"
+                  title="LinkedIn Profile"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedinIcon size={17} />
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Interactive Hardware / Video Teaser Card */}
-          <div className="bento-card bento-teaser">
-            <div className="teaser-video-container">
+          {/* Minimalist Hardware / Vision Video Showcase */}
+          <div className="hero-media-panel">
+            <div className="hero-video-frame">
               <video
-                className="teaser-video"
+                className="hero-video"
                 autoPlay
                 muted
                 loop
@@ -76,41 +93,10 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
                 <source src="Videos/Vision + XTS.mp4" type="video/mp4" />
                 Your browser does not support HTML5 video.
               </video>
-
-              <div className="teaser-overlay">
-                <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
-                  <span className="telemetry-chip">
-                    <Terminal size={12} />
-                    <span>TwinCAT 3 + ONNX</span>
-                  </span>
-                  <span className="telemetry-chip">
-                    <Sparkles size={12} />
-                    <span>30 Hz Real-Time</span>
-                  </span>
-                </div>
-                <div style={{ color: '#fff', fontWeight: 700, fontSize: '1.05rem' }}>
-                  Beckhoff XTS Gesture Tracking
-                </div>
-                <div style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.82rem' }}>
-                  Hand-landmark inference feeding deterministic PLC motion logic
-                </div>
+              <div className="hero-video-caption">
+                <span className="caption-tag">Beckhoff XTS Mover</span>
+                <span className="caption-meta">TwinCAT 3 + ONNX • 30 Hz Real-Time Tracking</span>
               </div>
-            </div>
-          </div>
-
-          {/* Stat Cards Strip */}
-          <div className="bento-card bento-stats">
-            <div className="stat-item">
-              <div className="stat-number">4+</div>
-              <div className="stat-label">Years of Engineering Study</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">7+</div>
-              <div className="stat-label">Technical Projects</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">4</div>
-              <div className="stat-label">Industry & Campus Roles</div>
             </div>
           </div>
         </div>
