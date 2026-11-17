@@ -10,16 +10,15 @@ export default function Hero({ onNavigate, onCopyEmail, copied }) {
           {/* Main Bio Column */}
           <div className="hero-intro">
             <div className="hero-header-block">
-              <span className="hero-kicker">Portfolio & Engineering Notes</span>
+              <span className="hero-kicker">Robotics & Vision Engineering</span>
               <h1 className="hero-name">Yash Panchal</h1>
-              <p className="hero-role">Robotics & Computer Vision Engineer</p>
+              <p className="hero-role">Robotics, Vision & Systems Engineer</p>
               <p className="hero-school">B.S. in Computer Science — University of Minnesota, Twin Cities</p>
             </div>
 
             <p className="hero-bio">
-              Specializing in real-time robotic perception, 3D computer vision, and industrial motion control.
-              Experienced in deploying machine vision inference directly into deterministic PLC environments
-              (Beckhoff TwinCAT) and ROS2 simulation workflows, translating spatial data into deterministic kinematic action.
+              Engineering real-time robotic perception, 3D computer vision pipelines, and deterministic industrial motion control.
+              Combining PyTorch, ROS2, and TwinCAT 3 to connect machine learning inference directly to physical hardware.
             </p>
 
             <div className="hero-cta-group">

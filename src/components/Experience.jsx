@@ -9,7 +9,7 @@ export default function Experience() {
         <div className="section-header">
           <h2 className="section-title">Work Experience</h2>
           <p className="section-desc">
-            Industrial robotics engineering, undergraduate instruction, and hardware test operations.
+            Applied background in industrial automation engineering, electronics hardware operations, and computer science instruction.
           </p>
         </div>
 

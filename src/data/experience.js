@@ -8,10 +8,10 @@ export const workExperience = [
     accent: "from-blue-600 to-cyan-500",
     tags: ["TwinCAT 3", "Industrial Automation", "TwinCAT Vision", "ONNX", "Motion Control"],
     bullets: [
-      "Developed an innovative gesture-controlled TwinCAT Vision system to manipulate Beckhoff XTS linear movers in real time, connecting machine learning hand-landmark tracking to deterministic PLC motion cycles.",
-      "Assisted senior application engineers in technical customer consultations, machine scoping, and hardware troubleshooting.",
-      "Collaborated with cross-functional engineering teams to produce 4+ technical solution proposals and proof-of-concept demos for enterprise industrial automation clients.",
-    ],
+      "Built a gesture-controlled TwinCAT Vision system to drive Beckhoff XTS linear movers in real time, linking ML hand-landmark tracking to deterministic PLC motion cycles.",
+      "Supported senior application engineers in technical customer consultations, machine scoping, and hardware troubleshooting.",
+      "Partnered with cross-functional engineering teams to produce 4+ technical solution proposals and proof-of-concept demos for industrial automation clients."
+],
   },
   {
     title: "Dept. of Electrical & Computer Engineering, UMN",
@@ -22,10 +22,10 @@ export const workExperience = [
     accent: "from-purple-600 to-indigo-500",
     tags: ["Hardware Testing", "Lab Logistics", "Soldering & Circuit Repair", "Microcontrollers"],
     bullets: [
-      "Maintain, calibrate, and test precision electronic laboratory equipment (oscilloscopes, power supplies, multimeters) across multiple undergraduate ECE courses.",
+      "Maintain, calibrate, and test laboratory instruments—oscilloscopes, power supplies, and multimeters—across undergraduate ECE courses.",
       "Assembled and validated 300+ hardware lab kits, performing component-level soldering, PCB testing, and hardware repair.",
-      "Advised faculty and 100+ engineering students on electronic part selection, inventory logistics, and embedded prototyping.",
-    ],
+      "Advised faculty and 100+ engineering students on component selection, inventory logistics, and embedded prototyping."
+],
   },
   {
     title: "Dept. of Computer Science & Engineering, UMN",
@@ -36,10 +36,10 @@ export const workExperience = [
     accent: "from-teal-600 to-emerald-500",
     tags: ["Algorithms & Data Structures", "Python / C", "Technical Mentorship", "Code Review"],
     bullets: [
-      "Collaborated with course professors and graduate TAs to lead weekly lab sections and exam preparation for 20+ engineering students.",
-      "Delivered one-on-one technical mentorship during office hours, debugging core algorithmic assignments and data structure implementations.",
-      "Conducted rigorous code reviews and graded technical coursework with actionable, detailed feedback.",
-    ],
+      "Led weekly lab sections and exam review sessions for 20+ engineering students alongside course professors and graduate TAs.",
+      "Delivered 1-on-1 technical mentorship during office hours, debugging algorithmic assignments and data structure implementations in Python and C.",
+      "Conducted code reviews and graded technical coursework, providing targeted feedback on correctness and design."
+],
   },
   {
     title: "Housing and Residential Life, UMN",
@@ -50,8 +50,8 @@ export const workExperience = [
     accent: "from-amber-600 to-orange-500",
     tags: ["Operations", "Conflict Resolution", "Crisis Response", "Client Relations"],
     bullets: [
-      "Supported 500+ residents, maintained building safety protocols, and managed front desk logistics in a 24/7 university residential setting.",
-      "Conducted security rounds, coordinated with emergency responders, and utilized IRIS database software for administrative tracking.",
-    ],
+      "Supported 500+ residents, enforced building safety protocols, and managed 24/7 front-desk operations in university housing.",
+      "Conducted security rounds, coordinated with emergency responders, and logged operational records in IRIS database software."
+],
   },
 ];

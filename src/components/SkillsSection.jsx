@@ -16,7 +16,7 @@ export default function SkillsSection() {
         <div className="section-header">
           <h2 className="section-title">Technical Expertise</h2>
           <p className="section-desc">
-            Core technical competencies developed through industrial engineering, academic research, and system implementation.
+            Core frameworks and hardware toolchains across computer vision, machine learning, robotics, and PLC automation.
           </p>
         </div>
 

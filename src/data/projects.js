@@ -11,12 +11,12 @@ export const portfolioProjects = [
       hardware: "Beckhoff XTS Mover",
     },
     summary:
-      "Integrated a MediaPipe hand-landmark model in ONNX format into the TwinCAT Machine Learning Manager to execute real-time gesture detection and finger-spacing tracking for industrial linear motion.",
+      "Integrated an ONNX MediaPipe hand-landmark model into TwinCAT Machine Learning Manager for 30 Hz gesture detection and finger-spacing tracking on Beckhoff XTS linear movers.",
     highlights: [
-      "Mapped ML inference outputs directly to PLC state logic for dynamic Beckhoff XTS mover behaviors such as Tractor Beam and Accordion modes.",
-      "Implemented real-time position-sorting algorithms to prevent mover deadlocks and enforce collision avoidance during gesture-driven tracking.",
-      "Bridged deep learning computer vision directly into industrial automation motion logic with sub-millisecond deterministic cycle times.",
-    ],
+      "Mapped ML inference outputs to PLC state logic to drive dynamic Beckhoff XTS mover behaviors, including Tractor Beam and Accordion modes.",
+      "Implemented real-time position-sorting algorithms to prevent mover deadlocks and enforce collision avoidance during gesture tracking.",
+      "Connected deep learning vision inference directly to industrial PLC motion logic with sub-millisecond deterministic cycle times."
+],
     link: "https://github.com/YashPanchal1012",
     media: [
       {
@@ -55,12 +55,12 @@ export const portfolioProjects = [
       sim: "Gazebo Physics",
     },
     summary:
-      "Led a 3-person engineering team to build an end-to-end ROS2 pipeline translating webcam-tracked human arm landmarks into smooth joint commands for a simulated robotic arm in Gazebo.",
+      "Led a 3-person team to build an end-to-end ROS2 pipeline translating webcam-tracked human arm landmarks into joint commands for a simulated robotic arm in Gazebo.",
     highlights: [
-      "Implemented 30 FPS MediaPipe pose and hand tracking, calculating continuous joint angles using 2D vector dot products and trigonometric mapping.",
-      "Simulated a physics-enabled URDF arm and 2-finger gripper in Gazebo, calibrating trajectory interpolation profiles to prevent abrupt snapping.",
-      "Mapped continuous joint angles and gesture triggers with hysteresis debouncing into ROS 2 JointTrajectory commands for intuitive simulated teleoperation.",
-    ],
+      "Implemented 30 FPS MediaPipe pose and hand tracking, computing continuous joint angles via 2D vector dot products and trigonometric mapping.",
+      "Simulated a physics-enabled URDF arm with 3 revolute joints and a 2-finger gripper in Gazebo, calibrating trajectory interpolation to prevent snapping.",
+      "Mapped continuous joint angles and hysteresis-debounced gesture triggers into ROS 2 JointTrajectory commands for teleoperation."
+],
     link: "https://github.com/YashPanchal1012/csci-4551-final-project",
     media: [
       {
@@ -92,13 +92,13 @@ export const portfolioProjects = [
       sampler: "50-Step Heun ODE",
     },
     summary:
-      "Engineered continuous-time flow-matching generative models from scratch in PyTorch, progressing from 2D vector field distributions to a 3.91M-parameter Residual GroupNorm U-Net for unconditional image synthesis across MNIST and CIFAR-10.",
+      "Built continuous-time flow-matching generative models from scratch in PyTorch, scaling from 2D vector fields to a 3.91M-parameter Residual GroupNorm U-Net for MNIST and CIFAR-10 synthesis.",
     highlights: [
-      "Formulated continuous-time probability paths and implemented Optimal Transport (OT) displacement interpolation, straightening flow trajectories and accelerating convergence.",
-      "Architected a 3.91M-parameter Residual GroupNorm U-Net featuring 32-dim sinusoidal timestep embeddings, zero-initialized residual connections, and second-order Heun ODE numerical integration.",
-      "Executed a systematic 18-trial ablation study optimizing network capacity, cosine learning rate schedules (CLR), batch size, and integration steps to achieve an 89.1% classifier recognition score.",
-      "Adapted the generative pipeline to 3-channel CIFAR-10 natural image synthesis and built an interactive Gradio web application for real-time trajectory visualization and noise sampling.",
-    ],
+      "Formulated continuous-time probability paths with Optimal Transport (OT) displacement interpolation to straighten flow trajectories and accelerate convergence.",
+      "Engineered a 3.91M-parameter Residual GroupNorm U-Net using 32-dim sinusoidal timestep embeddings, zero-initialized residual connections, and 50-step Heun ODE integration.",
+      "Executed an 18-trial ablation study over network capacity, cosine learning rate schedules (CLR), batch size, and integration steps to reach an 89.1% classifier score.",
+      "Adapted the pipeline to 3-channel CIFAR-10 image synthesis and built a Gradio web app for noise sampling and ODE trajectory visualization."
+],
     link: "https://github.com/YashPanchal1012/Flow-Matching",
     liveUrl: "https://yashpanchal1012-flow-matching.hf.space/",
     media: [
@@ -163,14 +163,14 @@ export const portfolioProjects = [
       novelPSNR: "25.74 dB PSNR",
     },
     summary:
-      "Engineered an end-to-end 3D reconstruction and novel view synthesis pipeline, progressing from two-view epipolar geometry and linear SVD triangulation to multi-view PyCOLMAP Structure-from-Motion (SfM) and 3D Gaussian Splatting.",
+      "Engineered an end-to-end 3D reconstruction and novel view synthesis pipeline combining two-view epipolar geometry, linear SVD triangulation, PyCOLMAP Structure-from-Motion, and 3D Gaussian Splatting.",
     highlights: [
-      "Calibrated camera intrinsics with PyCOLMAP and estimated relative poses (R, t) via SIFT feature matching, Lowe's ratio test (0.75), and 5-point RANSAC Essential matrix decomposition with cheirality verification.",
-      "Formulated linear triangulation using Singular Value Decomposition (SVD), achieving 0.367 px joint RMS reprojection error on real correspondences and 1e-14 m error on synthetic verification.",
-      "Optimized 3D coordinates via non-linear Levenberg-Marquardt least-squares refinement, reducing joint RMS reprojection error to 0.338 px (-7.9% reduction).",
-      "Executed incremental Structure-from-Motion across 38 scene views using PyCOLMAP, registering 100% of images to reconstruct 15,129 sparse 3D points from 73,146 observations (0.868 px mean error).",
-      "Trained a 3D Gaussian Splatting model (190,356 Gaussians) in 4.06 min on an RTX 3070 GPU, evaluating 4 held-out novel views to achieve 25.74 dB mean PSNR.",
-    ],
+      "Calibrated camera intrinsics in PyCOLMAP and estimated relative poses (R, t) via SIFT matching, Lowe's ratio test (0.75), and 5-point RANSAC Essential matrix decomposition with cheirality checks.",
+      "Formulated linear SVD triangulation, achieving 0.367 px joint RMS reprojection error on real correspondences and 1e-14 m error on synthetic verification.",
+      "Refined 3D coordinates via non-linear Levenberg-Marquardt least squares, reducing joint RMS reprojection error by 7.9% to 0.338 px.",
+      "Executed incremental PyCOLMAP SfM across 38 views, registering 100% of images to reconstruct 15,129 sparse 3D points from 73,146 observations (0.868 px mean error).",
+      "Trained a 190,356-Gaussian Splatting model in 4.06 min on an RTX 3070 GPU, achieving 25.74 dB mean PSNR across 4 held-out novel views."
+],
     link: "https://github.com/YashPanchal1012/3D-Reconstruction",
     media: [
       {
@@ -236,12 +236,12 @@ export const portfolioProjects = [
       blending: "Feather Blending",
     },
     summary:
-      "Implemented an end-to-end computer vision pipeline for panoramic image stitching using SIFT feature matching, robust RANSAC homography estimation, and seamless cylindrical blending.",
+      "Built a panoramic image stitching pipeline in Python using SIFT feature matching, RANSAC homography estimation, and cylindrical blending.",
     highlights: [
-      "Detected SIFT keypoints and filtered multi-view correspondences with Lowe's ratio test (0.7 threshold).",
-      "Estimated planar homographies using normalized DLT and robust RANSAC with adaptive confidence-based early stopping (p=0.99).",
-      "Applied bilinear warping, distance-transform feather blending, gain compensation, and cylindrical projection to produce seamless wide-angle panoramas.",
-    ],
+      "Extracted SIFT keypoints and filtered multi-view correspondences with Lowe's ratio test (0.7 threshold).",
+      "Estimated planar homographies using normalized DLT and RANSAC with adaptive confidence-based early stopping (p = 0.99).",
+      "Applied bilinear warping, distance-transform feather blending, gain compensation, and cylindrical projection to assemble wide-angle panoramas."
+],
     link: "https://github.com/YashPanchal1012/Panoramic-Image-Stitching",
     media: [
       {
@@ -292,12 +292,12 @@ export const portfolioProjects = [
       backbone: "Frozen DINOv2",
     },
     summary:
-      "Developed a robust GTSRB traffic sign perception pipeline achieving 76.6% accuracy across 43 classes using self-supervised foundation vision models.",
+      "Built a GTSRB traffic sign classifier using frozen DINOv2 vision transformer embeddings, achieving 76.6% Top-1 accuracy across 43 classes.",
     highlights: [
-      "Built a 3-layer PyTorch MLP classifier on top of a frozen DINOv2 vision transformer feature extractor.",
-      "Evaluated a zero-shot Qwen-VL multimodal baseline to analyze real-time inference latency and accuracy tradeoffs.",
-      "Conducted extensive error analysis and confusion matrix visualizations for edge-case traffic sign patterns.",
-    ],
+      "Trained a 3-layer PyTorch MLP classifier on features extracted from a frozen DINOv2 vision transformer.",
+      "Benchmarked a zero-shot Qwen-VL multimodal baseline to quantify inference latency and accuracy tradeoffs.",
+      "Analyzed failure modes via confusion matrices and misclassification visualizations on edge-case traffic signs."
+],
     link: "https://github.com/YashPanchal1012",
     media: [
       {
@@ -332,12 +332,12 @@ export const portfolioProjects = [
       latency: "< 50ms Search",
     },
     summary:
-      "Built a multimodal image retrieval tool that semantically indexes and ranks local image collections against natural-language descriptions or reference images.",
+      "Built a multimodal image search engine using OpenAI CLIP embeddings to index and rank local image collections against text descriptions or reference images.",
     highlights: [
-      "Encoded image caches with OpenAI CLIP and normalized embeddings for instantaneous cosine-similarity search.",
-      "Engineered a responsive Gradio interface supporting both text query prompts and image-to-image queries.",
-      "Implemented configurable top-k nearest-neighbor retrieval with similarity score telemetry.",
-    ],
+      "Encoded image caches into 512-dim normalized OpenAI CLIP embeddings for cosine-similarity retrieval in under 50 ms.",
+      "Built a Gradio interface supporting both natural-language text prompts and image-to-image queries.",
+      "Implemented configurable top-k nearest-neighbor retrieval with per-result similarity score telemetry."
+],
     link: "https://github.com/YashPanchal1012/Semantic-Image-Search",
     liveUrl: "https://yashpanchal1012-semantic-image-search.hf.space/",
     media: [
@@ -369,12 +369,12 @@ export const portfolioProjects = [
       api: "Spoonacular & TheMealDB",
     },
     summary:
-      "Developed a full-stack recipe management web application allowing users to search, filter, and plan meals based on on-hand ingredients.",
+      "Built a full-stack recipe management web app in Django and React to search, filter, and plan meals from on-hand ingredients.",
     highlights: [
-      "Integrated TheMealDB and Spoonacular external REST APIs to fetch and normalize rich nutritional recipe data.",
-      "Built a modular React frontend communicating with a custom Django backend managing user inventory.",
-      "Optimized query filtering for fast local retrieval and ingredient-matching calculations.",
-    ],
+      "Integrated TheMealDB and Spoonacular REST APIs to ingest and normalize nutritional recipe data.",
+      "Built a modular React SPA backed by a custom Django REST API and SQLite database for user inventory tracking.",
+      "Optimized query filtering for fast local retrieval and ingredient-matching calculations."
+],
     link: "https://github.com/YashPanchal1012/recipe_hub",
     liveUrl: "https://recipe-hub-virid.vercel.app/",
     media: [

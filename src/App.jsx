@@ -5,21 +5,57 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import SkillsSection from './components/SkillsSection';
 import Footer from './components/Footer';
-import ProjectModal from './components/ProjectModal';
+import ProjectPage from './components/ProjectPage';
+import { portfolioProjects } from './data/projects';
 import { Check } from 'lucide-react';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('portfolio-theme') || 'dark';
   });
+
   const [activeSection, setActiveSection] = useState('about');
-  const [selectedProject, setSelectedProject] = useState(null);
   const [copied, setCopied] = useState(false);
+
+  // Read current project ID from URL hash (e.g. #/project/3d-scene-reconstruction)
+  const [currentProjectId, setCurrentProjectId] = useState(() => {
+    const hash = window.location.hash;
+    if (hash.startsWith('#/project/')) {
+      return hash.replace('#/project/', '');
+    }
+    return null;
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
+
+  // Synchronize hash changes with browser Back / Forward buttons & direct links
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#/project/')) {
+        const id = hash.replace('#/project/', '');
+        setCurrentProjectId(id);
+        window.scrollTo(0, 0);
+      } else {
+        setCurrentProjectId(null);
+        if (hash) {
+          const sectionId = hash.replace('#', '');
+          const el = document.getElementById(sectionId);
+          if (el) {
+            setTimeout(() => {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+          }
+        }
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
@@ -31,57 +67,76 @@ export default function App() {
     setTimeout(() => setCopied(false), 3000);
   };
 
-  const scrollToSection = (id) => {
+  const navigateToSection = (id) => {
     setActiveSection(id);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+    if (currentProjectId) {
+      // If currently on a project page, return to home and scroll to target section
+      window.location.hash = `#${id}`;
+    } else {
+      const element = document.getElementById(id);
+      if (element) {
+        const offset = 80;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elementRect = element.getBoundingClientRect().top;
+        const elementPosition = elementRect - bodyRect;
+        const offsetPosition = elementPosition - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth',
+        });
+      }
     }
   };
+
+  const handleSelectProject = (project) => {
+    window.location.hash = `#/project/${project.id}`;
+  };
+
+  const handleBackToProjects = () => {
+    window.location.hash = '#projects';
+  };
+
+  const activeProject = currentProjectId
+    ? portfolioProjects.find((p) => p.id === currentProjectId)
+    : null;
 
   return (
     <div className="content-wrapper">
       <Navbar
         theme={theme}
         toggleTheme={toggleTheme}
-        activeSection={activeSection}
-        onNavigate={scrollToSection}
+        activeSection={currentProjectId ? '' : activeSection}
+        onNavigate={navigateToSection}
       />
 
-      <main>
-        <Hero
-          onNavigate={scrollToSection}
-          onCopyEmail={handleCopyEmail}
-          copied={copied}
-        />
-        <Experience />
-        <Projects onSelectProject={setSelectedProject} />
-        <SkillsSection />
-      </main>
+      {activeProject ? (
+        <main>
+          <ProjectPage
+            project={activeProject}
+            onBack={handleBackToProjects}
+            onSelectProject={handleSelectProject}
+          />
+        </main>
+      ) : (
+        <main>
+          <Hero
+            onNavigate={navigateToSection}
+            onCopyEmail={handleCopyEmail}
+            copied={copied}
+          />
+          <Experience />
+          <Projects onSelectProject={handleSelectProject} />
+          <SkillsSection />
+        </main>
+      )}
 
       <Footer onCopyEmail={handleCopyEmail} copied={copied} />
-
-      {/* Deep-Dive Project Modal */}
-      {selectedProject && (
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      )}
 
       {/* Copy Email Toast Notification */}
       {copied && (
         <div className="toast-notice" role="status" aria-live="polite">
-          <Check size={18} color="var(--accent-emerald)" />
+          <Check size={16} color="var(--accent)" />
           <span>yashpanchal1326@gmail.com copied to clipboard!</span>
         </div>
       )}

@@ -23,7 +23,7 @@ export default function Projects({ onSelectProject }) {
         <div className="section-header">
           <h2 className="section-title">Technical Projects</h2>
           <p className="section-desc">
-            Robotics hardware control, spatial geometry algorithms, neural perception models, and full-stack software.
+            Systems built across industrial motion control, robotic teleoperation, 3D scene reconstruction, generative modeling, and full-stack web apps.
           </p>
         </div>
 
