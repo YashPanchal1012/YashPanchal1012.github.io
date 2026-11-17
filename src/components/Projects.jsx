@@ -3,7 +3,7 @@ import { portfolioProjects } from '../data/projects';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { GithubIcon } from './Icons';
 
-export default function Projects({ onSelectProject }) {
+export default function Projects({ onSelectProject, onHoverProject, onLeaveProject }) {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const filters = [
@@ -50,10 +50,10 @@ export default function Projects({ onSelectProject }) {
               key={project.id} 
               className="project-card"
               onClick={() => onSelectProject(project)}
+              onMouseEnter={() => onHoverProject && onHoverProject(project)}
+              onMouseLeave={() => onLeaveProject && onLeaveProject()}
             >
               <div className="card-media-wrapper">
-                <span className="category-tag">{project.categoryLabel}</span>
-
                 {project.mediaType === 'video' ? (
                   <video
                     src={project.preview}
@@ -79,22 +79,16 @@ export default function Projects({ onSelectProject }) {
                 
                 <p className="card-summary">{project.summary}</p>
 
-                {/* Telemetry Chips (Clean Monospace Badges, No Sparkles) */}
+                {/* Verified Metrics Line */}
                 {project.telemetry && (
-                  <div className="telemetry-row">
-                    {Object.entries(project.telemetry).map(([key, val]) => (
-                      <span key={key} className="telemetry-chip">
-                        {val}
-                      </span>
-                    ))}
+                  <div className="card-metrics-line">
+                    {Object.values(project.telemetry).join('  ·  ')}
                   </div>
                 )}
 
-                {/* Tech Chips */}
-                <div className="tech-tag-row">
-                  {project.tech.map((tech) => (
-                    <span key={tech} className="tech-chip">{tech}</span>
-                  ))}
+                {/* Core Tech Stack */}
+                <div className="card-stack-line">
+                  {project.tech.join('  ·  ')}
                 </div>
 
                 <div className="card-footer" onClick={(e) => e.stopPropagation()}>

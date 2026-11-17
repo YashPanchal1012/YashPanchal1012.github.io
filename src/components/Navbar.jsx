@@ -4,10 +4,8 @@ import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Navbar({ theme, toggleTheme, activeSection, onNavigate }) {
   const navItems = [
-    { label: 'About', id: 'about' },
-    { label: 'Experience', id: 'experience' },
     { label: 'Projects', id: 'projects' },
-    { label: 'Skills', id: 'skills' },
+    { label: 'Experience', id: 'experience' },
   ];
 
   return (

@@ -351,6 +351,19 @@ body::before {
   font-weight: 400;
 }
 
+.hero-workbench-stage {
+  padding: 3rem 0 2.25rem;
+}
+
+.hero-statement {
+  font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.28;
+  color: var(--text-primary);
+  margin-bottom: 0.95rem;
+}
+
 .hero-bio {
   color: var(--text-secondary);
   font-size: 1rem;
@@ -395,26 +408,12 @@ body::before {
 }
 
 .hero-video-caption {
-  padding: 0.75rem 1rem;
+  padding: 0.65rem 1rem;
   background: var(--bg-surface);
   border-top: 1px solid var(--border-subtle);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-}
-
-.caption-tag {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-
-.caption-meta {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
+  line-height: 1.45;
 }
 
 /* Section Header Structure */
@@ -576,6 +575,23 @@ body::before {
   line-height: 1.55;
   margin-bottom: 1rem;
   flex-grow: 1;
+}
+
+/* Clean Metrics & Stack Lines */
+.card-metrics-line {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.01em;
+}
+
+.card-stack-line {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 1.15rem;
 }
 
 /* Monospace Clean Telemetry (No Sparkles) */
@@ -1469,5 +1485,417 @@ body::before {
   }
   .pagination-btn {
     max-width: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   THE INDUSTRIAL TELEMETRY WORKBENCH LAYOUT
+   (Teenage Engineering Tactile UI × Linear Structural Discipline)
+   ========================================================================== */
+
+.workbench-shell {
+  display: flex;
+  min-height: 100vh;
+  max-width: 1560px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+/* Left Sticky Control Rail (Desktop) */
+.workbench-sidebar {
+  width: 360px;
+  flex-shrink: 0;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  padding: 2rem 1.75rem;
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--bg-canvas);
+  z-index: 40;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-subtle) transparent;
+}
+
+.workbench-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.workbench-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+
+/* Identity & Credentials */
+.sidebar-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sidebar-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.sidebar-role {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.35;
+}
+
+.sidebar-school {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+/* Project Telemetry Inspector Card */
+.telemetry-hud-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 1.15rem;
+  font-family: var(--font-mono);
+  box-shadow: var(--shadow-subtle);
+  transition: all var(--transition-fast);
+}
+
+.telemetry-hud-card.idle {
+  background: transparent;
+  border: 1px dashed var(--border-subtle);
+  padding: 0.85rem 1rem;
+}
+
+.hud-idle-state {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hud-idle-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+}
+
+.hud-idle-hint {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  font-family: var(--font-sans);
+}
+
+.telemetry-hud-card:hover {
+  border-color: var(--border-hover);
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.hud-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hud-icon {
+  color: var(--accent);
+}
+
+.hud-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.hud-target-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-tag);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  text-transform: uppercase;
+}
+
+.hud-active-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.25rem;
+}
+
+.hud-project-name {
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.hud-project-default {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.telemetry-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.telemetry-row {
+  display: flex;
+  align-items: baseline;
+  font-size: 0.73rem;
+  line-height: 1.4;
+}
+
+.telemetry-key {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.telemetry-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border-hover);
+  margin: 0 0.4rem;
+  transform: translateY(-3px);
+}
+
+.telemetry-val {
+  color: var(--text-primary);
+  font-weight: 500;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Sidebar Navigation Directory */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.nav-group-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.sidebar-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border-radius: var(--radius-tag);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.sidebar-nav-btn:hover {
+  background: var(--bg-surface-subtle);
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.sidebar-nav-btn.active {
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border-color: var(--accent-border);
+  font-weight: 600;
+}
+
+.nav-idx {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-right: 0.6rem;
+}
+
+.nav-title {
+  flex: 1;
+}
+
+.nav-arrow {
+  opacity: 0.35;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.sidebar-nav-btn:hover .nav-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+/* Action Controls & Social */
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.actions-primary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.sidebar-btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-tag);
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-btn-action:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-hover);
+}
+
+.actions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar-socials {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sidebar-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-tag);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-icon-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.sidebar-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-tag);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+/* Fluid Main Workbench Engine */
+.workbench-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-header-only {
+  display: none;
+}
+
+/* Workbench Layout Responsive Breakdown */
+@media (min-width: 1024px) {
+  /* On desktop, hide top navbar to eliminate redundancy */
+  .mobile-header-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  .workbench-shell {
+    flex-direction: column;
+  }
+  
+  .mobile-header-only {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .workbench-sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar-nav {
+    display: none;
   }
 }

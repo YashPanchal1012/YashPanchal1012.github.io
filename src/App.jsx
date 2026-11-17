@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import TelemetrySidebar from './components/TelemetrySidebar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
-import SkillsSection from './components/SkillsSection';
 import Footer from './components/Footer';
 import ProjectPage from './components/ProjectPage';
 import { portfolioProjects } from './data/projects';
@@ -16,6 +16,7 @@ export default function App() {
 
   const [activeSection, setActiveSection] = useState('about');
   const [copied, setCopied] = useState(false);
+  const [inspectedProject, setInspectedProject] = useState(null);
 
   // Read current project ID from URL hash (e.g. #/project/3d-scene-reconstruction)
   const [currentProjectId, setCurrentProjectId] = useState(() => {
@@ -103,35 +104,51 @@ export default function App() {
 
   return (
     <div className="content-wrapper">
-      <Navbar
-        theme={theme}
-        toggleTheme={toggleTheme}
-        activeSection={currentProjectId ? '' : activeSection}
-        onNavigate={navigateToSection}
-      />
+      {/* Mobile-only top header navbar */}
+      <div className="mobile-header-only">
+        <Navbar
+          theme={theme}
+          toggleTheme={toggleTheme}
+          activeSection={currentProjectId ? '' : activeSection}
+          onNavigate={navigateToSection}
+        />
+      </div>
 
-      {activeProject ? (
-        <main>
-          <ProjectPage
-            project={activeProject}
-            onBack={handleBackToProjects}
-            onSelectProject={handleSelectProject}
-          />
-        </main>
-      ) : (
-        <main>
-          <Hero
-            onNavigate={navigateToSection}
-            onCopyEmail={handleCopyEmail}
-            copied={copied}
-          />
-          <Experience />
-          <Projects onSelectProject={handleSelectProject} />
-          <SkillsSection />
-        </main>
-      )}
+      <div className="workbench-shell">
+        <TelemetrySidebar
+          theme={theme}
+          toggleTheme={toggleTheme}
+          activeSection={currentProjectId ? '' : activeSection}
+          onNavigate={navigateToSection}
+          inspectedProject={activeProject || inspectedProject}
+          onCopyEmail={handleCopyEmail}
+          copied={copied}
+        />
 
-      <Footer onCopyEmail={handleCopyEmail} copied={copied} />
+        <div className="workbench-main">
+          {activeProject ? (
+            <main>
+              <ProjectPage
+                project={activeProject}
+                onBack={handleBackToProjects}
+                onSelectProject={handleSelectProject}
+              />
+            </main>
+          ) : (
+            <main>
+              <Hero onNavigate={navigateToSection} />
+              <Projects 
+                onSelectProject={handleSelectProject}
+                onHoverProject={setInspectedProject}
+                onLeaveProject={() => setInspectedProject(null)}
+              />
+              <Experience />
+            </main>
+          )}
+
+          <Footer onCopyEmail={handleCopyEmail} copied={copied} />
+        </div>
+      </div>
 
       {/* Copy Email Toast Notification */}
       {copied && (
